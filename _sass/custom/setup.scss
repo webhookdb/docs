@@ -1,0 +1,27 @@
+$wh-blue: #0099ff;
+$wh-yellow: #ffcd00;
+$wh-light: #f4faff;
+$wh-dark: #08090a;
+
+$pink-000: #f77ef1;
+$pink-100: #f967f1;
+$pink-200: #e94ee1;
+$pink-300: #dd2cd4;
+
+$blue-000: #2c84fa !default;
+$blue-100: #2869e6 !default;
+$blue-200: #264caf !default;
+$blue-300: #183385 !default;
+$blue-000: $wh-blue;
+$blue-100: darken($wh-blue, 8%);
+$blue-200: darken($wh-blue, 16%);
+$blue-300: darken($wh-blue, 15%);
+
+$yellow-000: #ffeb82 !default;
+$yellow-100: #fadf50 !default;
+$yellow-200: #f7d12e !default;
+$yellow-300: #e7af06 !default;
+$yellow-000: lighten($wh-yellow, 10%);
+$yellow-100: $wh-yellow;
+$yellow-200: darken($wh-yellow, 10%);
+$yellow-300: darken($wh-yellow, 20%);

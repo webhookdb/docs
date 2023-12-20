@@ -5,6 +5,7 @@ theme: just-the-docs
 url: https://docs.webhookdb.com
 logo: "/assets/images/webhookdb-logo.png"
 favicon_ico: "/assets/images/favicon.ico"
+color_scheme: webhookdb
 
 aux_links:
   "WebhookDB on GitHub":
@@ -19,3 +20,11 @@ gh_edit_link_text: "Edit this page on GitHub."
 gh_edit_repository: "https://github.com/webhookdb/docs"
 gh_edit_branch: "main"
 gh_edit_view_mode: "tree"
+
+callouts:
+  warning:
+    title: Warning
+    color: yellow
+  notice:
+    title: Note
+    color: blue
