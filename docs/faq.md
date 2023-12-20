@@ -19,3 +19,5 @@ A paragraph...
 {: .warning }
 
 A para
+
+![this is an image](/assets/images/diagram-api2sql-reservoir.png)

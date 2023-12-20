@@ -28,3 +28,26 @@ callouts:
   notice:
     title: Note
     color: blue
+
+collections:
+  guides:
+    permalink: "/:collection/:path/"
+    output: true
+  concepts:
+    permalink: "/:collection/:path/"
+    output: true
+  integrations:
+    permalink: "/:collection/:path/"
+    output: true
+
+just_the_docs:
+  collections:
+    concepts:
+      name: Concepts
+      nav_fold: true
+    guides:
+      name: Guides
+      nav_fold: true
+    integrations:
+      name: Integrations
+      nav_fold: true
