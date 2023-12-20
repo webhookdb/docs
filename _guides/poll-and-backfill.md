@@ -1,17 +1,23 @@
 ---
-title: HTTP Sync
+title: High Availability
 layout: home
 ---
 
-# HTTP Sync
+While some 3rd party APIs do a good job delivering webhooks reliably, many do not.
+Being down for maintenance for even a few minutes can result in missing changes from an API,
+meaning you'll need other strategies to reconcile.
 
-For many applications, being able to query data via SQL is nice, but not sufficient. You also need to know when data changes.
+WebhookDB is 
+
+
+WebhookDB has multiple strategies 
+For most applications, being able to query data via SQL is nice, but not sufficient. You also need to know when data changes.
 
 WebhookDB supports a new, improved, and standard paradigm for webhooks that eliminates complexity on the application developer side. (That's you!)
 
 <a id="challenges-webhooks"></a>
 
-## [The Challenges of Webhooks](#challenges-webhooks)
+### [The Challenges of Webhooks](#challenges-webhooks)
 
 The standard pattern for webhooks is:
 
@@ -29,7 +35,7 @@ As an extreme case of asynchronous processing challenges, you can modify an exte
 
 <a id="challenges-polling"></a>
 
-## [The Challenges of Polling](#challenges-polling)
+### [The Challenges of Polling](#challenges-polling)
 
 This is, of course, assuming an API has solid support for webhooks. Many APIs do not. You then have to get into periodic polling. Polling has its own challenges:
 
@@ -40,7 +46,7 @@ This is, of course, assuming an API has solid support for webhooks. Many APIs do
 
 <a id="httpsync-rescue"></a>
 
-## [WebhookDB HTTP Sync to the Rescue](#httpsync-rescue)
+### [WebhookDB HTTP Sync to the Rescue](#httpsync-rescue)
 
 WebhookDB's "HTTP Sync" system solves all of these issues. We've spent a lot of effort on designing an ergonomic, easy-to-use system that allows application developers to focus on logic, rather than the mechanics of handling webhooks and/or polling.
 
@@ -67,7 +73,7 @@ In practice, this hugely simplifies handling of events. Our customers have remov
 
 <a id="setup"></a>
 
-## [Setup](#setup)
+### [Setup](#setup)
 
 HTTP Sync setup first requires you to build an endpoint in your backend that WebhookDB can reach.
 This endpoint should require HTTP Basic Authentication.
@@ -75,8 +81,8 @@ These Basic Auth credentials are passed in with your backend's URL.
 
 Once that endpoint is available, you can tell WebhookDB to sync to it: 
 
-```shell
-$ webhookdb httpsync create stripe_customer_v1
+```arff
+webhookdb httpsync create stripe_customer_v1
 Enter the HTTP endpoint that WebhookDB should sync data to: https://secretuser:secretpass@api.myapplication.com 
 Every 60 seconds, data from stripe_customer_v1 in stripe_customer_v1_16cd will be synchronized to https://***:***@api.myapplication.com
 ```
@@ -101,4 +107,4 @@ Once HTTP Sync is set up, it will periodically post new information to the endpo
 }
 ```
 
-For a list of flags for the `webhookdb httpsync` command, pass `--help` or read the [manual]({% link _manual/httpsync %}).
+For a list of flags for the `webhookdb httpsync` command, pass `--help` or read the [manual](/docs/manual#httpsync).

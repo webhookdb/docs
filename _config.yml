@@ -39,15 +39,22 @@ collections:
   integrations:
     permalink: "/:collection/:path/"
     output: true
+  manual:
+    permalink: "/:collection/:path/"
+    output: true
+
 
 just_the_docs:
   collections:
-    concepts:
-      name: Concepts
-      nav_fold: true
     guides:
       name: Guides
-      nav_fold: true
+      nav_fold: false
+    concepts:
+      name: Concepts
+      nav_fold: false
     integrations:
       name: Integrations
+      nav_fold: true
+    manual:
+      name: Manual
       nav_fold: true
