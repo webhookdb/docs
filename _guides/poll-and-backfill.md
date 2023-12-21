@@ -38,6 +38,6 @@ $ curl https://api.webhookdb.com/v1/organizations/my_org_key/service_integration
 {"id":"bfj_123","status":"finished"}
 ```
 
-See [using the API to backfill jobs]({% link _guides/api/backfill.md %}) for more details about using the API to backfill.
+See [using the API to backfill]({% link docs/api/backfill.md %}) for more details about using the API to backfill.
 
 For a list of flags for the `webhookdb backfill` command, pass `--help` or read the [manual]({% link _manual/backfill.md %}).

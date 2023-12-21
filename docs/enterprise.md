@@ -1,5 +1,5 @@
 ---
-title: WebhookDB Enterprise
+title: Enterprise License
 layout: home
 nav_order: 500
 ---

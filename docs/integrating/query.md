@@ -53,7 +53,7 @@ Very useful in environments where drivers may not be availble.
 One common example is using WebhookDB from Wordpress.
 You can query your replicated data via the API, rather than worrying about installing a driver.
 
-See [Querying via the API]({% link _guides/api/query.md %}) for more info.
+See [Querying via the API]({% link docs/api/query.md %}) for more info.
 
 ```
 $ curl -X POST -d '{"query":"SELECT * FROM stripe_charge_v1_abc0}' -H "Content-Type: application/json" https://api.webhookdb.com/v1/db/my_org/sql
