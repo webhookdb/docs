@@ -1,6 +1,7 @@
 ---
 title: Securing Your Database
-layout: home
+path: /docs/securing
+order: 65
 ---
 
 One of the amazing features of [API2SQL](/docs/api2sql/)

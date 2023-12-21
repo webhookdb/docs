@@ -6,8 +6,6 @@ nav_order: 400
 
 # WebhookDB Cloud
 
-<hr />
-
 WebhookDB Cloud is our hosted SaaS offering.
 
 WebhookDB is designed for self-hosting.

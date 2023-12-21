@@ -1,7 +1,10 @@
 ---
 title: The API Data Reservoir
 layout: home
+nav_order: 20
 ---
+
+# The API Data Reservoir
 
 WebhookDB is modeled after the way a **reservoir** works.
 
@@ -25,6 +28,6 @@ WebhookDB works the same way:
   there's no need to learn, deploy, and manage new technology or services on your critical path,
   like GraphQL or gRPC.
 
-**If you want to make integrating APIs as simple as turning on a tap, you can try [WebhookDB](/get-started) today.**
+**If you want to make integrating APIs as simple as turning on a tap, you can [try WebhookDB]({% link docs/getting-started/index.md %}) today.**
 
-<img src="/content/diagram-api2sql-reservoir.png" style="width: calc(100% - 1rem); margin-top: 1rem; margin-left: 0.5rem; margin-right: 0.5rem; margin-bottom: 1rem; height: auto;"></img>
+<img src="/assets/images/diagram-api2sql-reservoir.png" style="width: calc(100% - 1rem); margin-top: 1rem; margin-left: 0.5rem; margin-right: 0.5rem; margin-bottom: 1rem; height: auto;"></img>

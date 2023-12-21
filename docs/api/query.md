@@ -1,7 +1,7 @@
 ---
 title: Query the Database
 layout: home
-parent: 'WebhookDB API'
+parent: Calling the API
 ---
 
 # Query the Database

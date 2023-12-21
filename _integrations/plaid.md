@@ -3,10 +3,9 @@ title: Plaid
 layout: home
 ---
 
-**NOTICE: Our Plaid integration is still in Beta.
-We'd love for you to try it out!
-Please email <a href="mailto:hello@webhookdb.com">hello@webhookdb.com</a>
-to be added to our Plaid beta.**
+# Plaid
+
+{% include enterprise_integration.md %}
 
 Some APIs we integrate with are extremely tricky,
 and we cannot create as seamless a user experience as we strive for.
@@ -33,9 +32,7 @@ The changes explained in this document should take less
 than a day, and will give you a fully-working Plaid sync
 with the resources you configure.
 
-<a id="backend-changes"></a>
-
-## [Required Backend Changes](#backend-changes)
+## Required Backend Changes
 
 There are, broadly, five (small) things that need to be done to integrate WebhookDB with your Plaid data:
 
@@ -51,7 +48,7 @@ We'll walk through each of these steps exactly as we do them for clients.
 
 <a id="add-config"></a>
 
-### [Add the webhook URL and secret into application config](#add-config)
+### Add the webhook URL and secret into application config
 
 When you run `webhookdb integrations create plaid_item_v1` from the WebhookDB CLI,
 it will prompt for a webhook signing secret; after you enter that, the CLI will print a URL.
@@ -71,7 +68,7 @@ replace them with however you handle config in your application.
 
 <a id="update-plaid-link"></a>
 
-### [Update where you create your Plaid Link tokens to specify the webhook URL](#update-plaid-link)
+### Update where you create your Plaid Link tokens to specify the webhook URL
 
 When you create the Plaid Link token, you must specify the webhook that Plaid
 will use when items get updated.
@@ -98,12 +95,12 @@ curl -X POST https://sandbox.plaid.com/link/token/create -H 'Content-Type: appli
 ```
 
 This will ensure WebhookDB finds out about changes to your Plaid items.
-Note that you can still [proxy webhooks](/docs/guide#proxy-webhooks)
+Note that you can still [send notification webhooks]({% link docs/integrating/notifications.md %})
 using WebhookDB, in case you still need webhooks to hit your backend.
 
 <a id="notify-whdb"></a>
 
-### [Notify WebhookDB about new Tokens/Items](#notify-whdb)
+### Notify WebhookDB about new Tokens/Items
 
 After you exchange your Plaid public token for an access token,
 Plaid creates the 'Item' representing this link.
@@ -140,7 +137,7 @@ Note that both Plaid and your backend POST to the same WebhookDB URL.
 
 <a id="update-plaid-items"></a>
 
-### [Update existing Items in Plaid itself to use the new webhook URL](#update-plaid-items)
+### Update existing Items in Plaid itself to use the new webhook URL
 
 Once that change is deployed, and WebhookDB is notified when new Plaid Items are created,
 you must update your existing Plaid Items *in Plaid* so that Plaid sends updates
@@ -163,7 +160,7 @@ curl -X POST https://sandbox.plaid.com/item/webhook/update \
 
 <a id="backfill-items"></a>
 
-### [Notify WebhookDB about existing Tokens/Items](#backfill-items)
+### Notify WebhookDB about existing Tokens/Items
 
 Once you are telling WebhookDB about new Plaid items,
 and Plaid is sending all notifications to WebhookDB,
@@ -193,7 +190,7 @@ end
 
 <a id="backfill-history"></a>
 
-### [Backfill transaction history](#backfill-history)
+### Backfill transaction history
 
 Plaid sends Transaction webhook notifications for various reasons,
 as [explained in their docs](https://plaid.com/docs/api/products/transactions/#webhooks).
@@ -228,7 +225,7 @@ raise "Bad response: #{resp.inspect}" unless resp.code == '200'
 
 <a id="notify-whdb"></a>
 
-### [Notify WebhookDB about updated Tokens/Items](#notify-whdb-update)
+### Notify WebhookDB about updated Tokens/Items
 
 Plaid sends webhooks for certain types of item changes,
 like when there is an error, or consent is going to expire.
@@ -263,7 +260,7 @@ from your backend.
 
 <a id="getting-help"></a>
 
-## [Getting Help](#getting-help)
+## Getting Help
 
 We know integrating with Plaid is pretty complex. But, having done the same thing *without*
 WebhookDB takes several times longer, in our experience- something like 1 to 2 hours
@@ -271,5 +268,5 @@ WebhookDB takes several times longer, in our experience- something like 1 to 2 h
 and clients, we have found it rare that someone gets all of the nuances of their Plaid
 integration set up correctly, if at all, such as webhooks.
 
-If you need any help, we're here to assist. Just email <a href="mailto:hello@webhookdb.com">hello@webhookdb.com</a>
+If you need any help, we're here to assist. Just email [hello@webhookdb.com](mailto:hello@webhookdb.com)
 and we'll get back to you right away.

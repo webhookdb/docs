@@ -24,26 +24,26 @@ While these docs explain how WebhookDB works, you don't need to worry about most
 You just run WebhookDB (we suggest using [WebhookDB Cloud](https://webhookdb.com) to get started),
 type a command, and your data is synced for you.
 
-### [Schemas and normalization →]({% link _guides/schematization.md %})
+### [Schemas and normalization →]({% link _concepts/schematization.md %})
 
 All data replicated via WebhookDB is schematized and normalized.
 You no longer have to worry about parsing and converting timestamps and dates,
 parsing embedded JSON fragments, or dealing with out-of-order or duplicate webhooks.
 WebhookDB does this all for you, and you just query the database or receive replicated data.
 
-### [HTTP replication →]({% link _guides/httpsync.md %})
+### [HTTP replication →]({% link docs/integrating/httpsync.md %})
 
 HTTP replication can call custom endpoints with configurable batches of new and updated rows.
 This is useful when you are transforming 3rd party API data into your own database models,
 and you want to know about changes immediately.
 HTTP replication sounds like webhooks, but are easier to reason about, like database triggers.
 
-### [Automatic poll and backfill →]({% link _guides/poll-and-backfill.md %})
+### [Automatic poll and backfill →]({% link _concepts/poll-and-backfill.md %})
 
 Many APIs do not support webhooks, and there are many cases where you want to sync existing API data into WebhookDB.
 WebhookDB will automatically and intelligently poll and backfill
 
-### [Resilient and available →]({% link _guides/high-availability.md %})
+### [Resilient and available →]({% link docs/operating-webhookdb/high-availability.md %})
 
 WebhookDB uses several strategies to ensure that, even if its own data stores are down, received webhooks are never lost.
 This eliminates a significant reliability challenge when integrating with arbitrary 3rd party APIs.

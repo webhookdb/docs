@@ -1,6 +1,7 @@
 ---
 title: Schematization
 layout: home
+nav_order: 40
 ---
 
 # Schematization and Normalization

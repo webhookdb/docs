@@ -6,8 +6,6 @@ nav_order: 500
 
 # WebhookDB Enterprise
 
-<hr />
-
 WebhookDB Enterprise includes additional replicators that are generally only used when they're a key component of your business, in particular verticals.
 That is, if you're directly making money from a service using WebhookDB, it's probably through these high-effort integrations.
 

@@ -1,7 +1,10 @@
 ---
-title: API2SQL - New Paradigm for API Integration
+title: API2SQL
 layout: home
+nav_order: 10
 ---
+
+# API2SQL - New Paradigm for API Integration
 
 When we talk about working with and integrating APIs,
 we are usually talking about HTTP-based (or custom protocol) network calls.
@@ -10,8 +13,6 @@ but also GraphQL, WSDL, RPC/gRPC, and iPaaS (Integration Platforms-as-a-Service)
 Each of these solutions serve a purpose,
 but none of them conquer the issues that cause API integration
 to be fundamentally more complex than normal application development.
-
-<a id="hard-problem"></a>
 
 ### The Problem of API Integration
 
@@ -35,8 +36,6 @@ API integration, as we'll define it, involves:
 
 With this scope of the problem framed, let's look at the current solutions,
 what is holding us back, and a new way forward.
-
-<a id="history"></a>
 
 ### Brief History of APIs
 
@@ -85,8 +84,6 @@ So, in most cases, we're stuck with good-ole REST, or other forms of JSON-over-H
 Just like any great, durable technology, it has a laundry list of problems,
 but its simplicity and ubiquity is an undeniable asset, and not easily improved-upon.
 
-<a id="core-problems"></a>
-
 ### Two Core Problems with REST
 
 No matter what you think of REST, there are two fundamental issues that REST,
@@ -123,8 +120,6 @@ What if we told you that the solution to all of these problems
 is actually older than HTTP, just as widely available, and in many circles,
 even more loved?
 
-<a id="api2sql"></a>
-
 ### The New Paradigm: API2SQL
 
 If your API partners provided you a database connection to access your data,
@@ -145,7 +140,7 @@ To see the schema of the API, or inspect all its data,
 you would fire up `psql` and use `\d`,
 rather than trawl documentations or wrestle with Postman.
 
-You can [secure your data with your RDBMS's permissions](/docs/securing/),
+You can [secure your data with your RDBMS's permissions]({% link docs/operating-webhookdb/securing.md %}),
 rather than handing out your API keys to every service that needs to know
 anything about the data you store in APIs.
 Plus, your API data is now available to even more 3rd parties,
@@ -156,8 +151,6 @@ we have found it superior to using REST and its alternatives
 for API integration in every way.
 In fact, we continue to find new uses and benefits
 as we roll this new paradigm out on a wider basis.
-
-<a id="blockers"></a>
 
 ### Why Aren't we Using API2SQL?
 
@@ -178,8 +171,6 @@ I suspect we'll be seeing lots of API calls over HTTP for a long time.
 But API2SQL offers compelling benefits impossible using HTTP,
 the same way using something like Rust offers a set of benefits that are impossible with C.
 For this reason, I believe we will see increased API2SQL adoption over time.
-
-<a id="how-it-works"></a>
 
 ### How API2SQL works
 
@@ -206,14 +197,12 @@ a massive undertaking. We have been developing WebhookDB in earnest since 2020,
 it is the fourth iteration of a system we've built for other companies and clients,
 and we're still learning now things.
 
-<a id="today-and-tomorrow"></a>
-
 ### API2SQL today (and tomorrow)
 
-To get started with API2SQL today, you can try [WebhookDB](/get-started).
+To get started with API2SQL today, you can [try WebhookDB]({% link docs/getting-started/index.md %}).
 As far as I know, it is the only service today offering this API2SQL innovation.
 You can use it as a hosted service, or you can self-host it and run the entire thing yourself
-(see our [Guide to Self Hosting](/docs/self-hosting) for more details).
+(see [Operating WebhookDB]({% link docs/operating-webhookdb/index.md %}) for more details).
 This allows you to get going quickly,
 while still knowing you won't run into any performance or data governance issues later.
 

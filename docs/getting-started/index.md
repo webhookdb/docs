@@ -14,4 +14,4 @@ rather than API mocking. Finally it points you at monitoring webhook deliveries,
 and more complex replication features.
 
 Completing this guide should take less than 15 minutes. You can use [WebhookDB Cloud](https://webhookdb.com)
-to get going, or [run WebhookDB locally]({% link _guides/run-locally.md %}).
+to get going, or [run WebhookDB locally]({% link docs/operating-webhookdb/run-locally.md %}).

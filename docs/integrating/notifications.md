@@ -9,7 +9,7 @@ nav_order: 40
 
 Notifications are used to notify a subscriber (you, or potentially some service like Zapier)
 whenever a row is modified in WebhookDB. This can be due to WebhookDB receiving a webhook,
-or rows changing during [backfill]({% link _guides/poll-and-backfill.md %}).
+or rows changing during [backfill]({% link _concepts/poll-and-backfill.md %}).
 
 {: .notice }
 Yes, what we call 'notifications' are really 'webhooks.'

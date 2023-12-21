@@ -3,11 +3,6 @@ title: iCalendar
 layout: home
 ---
 
-**NOTICE: Our iCalendar integration is still in beta.
-We'd love for you to try it out!
-Please email <a href="mailto:hello@webhookdb.com">hello@webhookdb.com</a>
-to be added to our iCalendar beta.**
-
 The [iCalendar](https://en.wikipedia.org/wiki/ICalendar) format is used to describe
 calendars (and more) in a portable format.
 
@@ -22,9 +17,7 @@ There are just a couple things to do on your side:
 - POST to WebhookDB when a user links an iCalendar URL, which starts a periodic sync.
 - POST to WebhookDB when a user unlinks their calendar, which deletes all rows for the user.
 
-<a id="create-integrations"></a>
-
-## [Create Integrations](#create-integrations)
+## Create Integrations
 
 There are two integrations involved: one for calendars, and one for the events on those calendars.
 
@@ -43,7 +36,7 @@ Then add the events integration:
 
 Accept the prompt defaults to link them together.
 
-## [Testing your Integration](#testing)
+## Testing your Integration
 
 Before we start writing user data, let's use cURL and a public calendar URL
 to make sure syncing is working.
@@ -79,9 +72,7 @@ we show how to send new access tokens below).
 curl -X POST -d '{"type":"UNLINK","external_owner_id":"test-user"}' -H "Whdb-Webhook-Secret: ${WEBHOOKDB_ICALENDAR_SECRET}" -H "Content-Type: application/json" "${WEBHOOKDB_ICALENDAR_ENDPOINT}"
 ```
 
-<a id="sync"></a>
-
-### [Sync](#sync)
+### Sync
 
 When a user gives you their URL to sync, you send it to WebhookDB
 along with the webhook secret:
@@ -117,9 +108,7 @@ Google Calendar, for example, only updates ICS feeds every 8 hours
 
 If you ever need to force a sync, you can make the same 'SYNC' request.
 
-<a id="delete"></a>
-
-### [Delete](#delete)
+### Delete
 
 If your user unlinks their calendar, you should tell WebhookDB so it can delete all the data for that user.
 
@@ -136,7 +125,7 @@ requests.post(
 
 <a id="event-data"></a>
 
-## [Event Data](#event-data)
+## Event Data
 
 iCalendar is a text format that can be difficult to work with.
 Most iCalendar client libraries, for example, are incomplete or incorrect in various ways
@@ -221,7 +210,7 @@ and ask us to turn it on for you.
 
 <a id="next-steps"></a>
 
-## [Next Steps](#next-steps)
+## Next Steps
 
 Once WebhookDB is syncing, you have two options for getting the data back out:
 
@@ -230,14 +219,11 @@ Once WebhookDB is syncing, you have two options for getting the data back out:
 2. Use HTTP Sync to get notified about updates.
    This is a powerful-but-simple way to update your own database objects
    whenever changes happen in your attached calendars.
-   Check out the [docs on HTTP Sync](/docs/httpsync/).
+   Check out the [docs on HTTP Sync]({% link docs/integrating/httpsync.md %}).
 
-
-<a id="getting-help"></a>
-
-## [Getting Help](#getting-help)
+## Getting Help
 
 We know from experience that using WebhookDB to sync iCalendar URLs
 is a lot simpler than doing it yourself- minutes instead of hours or days.
-But if you need any help, we're here to assist. Just email <a href="mailto:hello@webhookdb.com">hello@webhookdb.com</a>
+But if you need any help, we're here to assist. Just email [hello@webhookdb.com](mailto:hello@webhookdb.com)
 and we'll get back to you right away.

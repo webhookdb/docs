@@ -3,10 +3,9 @@ title: Google Calendar
 layout: home
 ---
 
-**NOTICE: Our Google Calendar integration is still in beta.
-We'd love for you to try it out!
-Please email <a href="mailto:hello@webhookdb.com">hello@webhookdb.com</a>
-to be added to our Google Calendar beta.**
+# Google Calendar
+
+{% include enterprise_integration.md %}
 
 The [Google Calendar API](https://developers.google.com/calendar/api/guides/overview)
 is a feat of engineering but can be pretty difficult to integrate with properly.
@@ -22,9 +21,7 @@ but there are still a of couple things to do on your side:
 
 We'll go over all the steps for integrating Google Calendar.
 
-<a id="create-integrations"></a>
-
-## [Create Integrations](#create-integrations)
+## Create Integrations
 
 First we need to set up the 'parent' integration,
 which holds onto your Google Client ID and Client Secret.
@@ -45,9 +42,7 @@ Then you'll need to add two more integrations:
 
 Accept the prompt defaults to link them all together.
 
-<a id="testing"></a>
-
-## [Testing your Integration](#testing)
+## Testing your Integration
 
 Before we start writing anything in your backend, it's a good idea to make sure everything is set up right.
 Let's use cURL to validate everything is working.
@@ -89,16 +84,12 @@ we show how to send new access tokens below).
 curl -X POST -d '{"type":"UNLINK","external_owner_id":"test-user"}' -H "Whdb-Webhook-Secret: ${WEBHOOKDB_GOOGLE_CALENDAR_SECRET}" -H "Content-Type: application/json" "${WEBHOOKDB_GOOGLE_CALENDAR_ENDPOINT}"
 ```
 
-<a id="google-auth"></a>
-
-## [Integrating with Google Auth](#google-auth)
+## Integrating with Google Auth
 
 Now it's time to modify your application so it tells WebhookDB when
 your users link and unlink Google, and your application fetches a refresh token.
 
-<a id="on-link"></a>
-
-### [On Link](#on-link)
+### On Link
 
 When your user links their account (here is the relevant documentation),
 you use the "OAuth Access Code" to fetch "OAuth Credentials", like:
@@ -133,9 +124,7 @@ requests.post(
 )
 ```
 
-<a id="on-refresh"></a>
-
-### [On Refresh](#on-refresh)
+### On Refresh
 
 At times, you may get a new refresh token for a user.
 It should be rare, since refresh tokens don't expire, but it happens.
@@ -153,9 +142,7 @@ requests.post(
 )
 ```
 
-<a id="on-unlink"></a>
-
-### [On Unlink](#on-unlink)
+### On Unlink
 
 If your user unlinks their calendar, you should tell WebhookDB so it can delete all the data for that user.
 If for some reason you don't want to delete the data, you don't need to make this request;
@@ -174,9 +161,7 @@ requests.post(
 )
 ```
 
-<a id="force-resync"></a>
-
-### [Force Resync](#force-resync)
+### Force Resync
 
 There could be cases where you want to force a full resync of a user's Google Calendar
 (this should not be needed, but you never know).
@@ -192,9 +177,7 @@ requests.post(
 )
 ```
 
-<a id="next-steps"></a>
-
-## [Next Steps](#next-steps)
+## Next Steps
 
 Once WebhookDB is syncing, you have two options for getting the data back out:
 
@@ -203,16 +186,13 @@ Once WebhookDB is syncing, you have two options for getting the data back out:
 2. Use HTTP Sync to get notified about updates.
    This is a powerful-but-simple way to update your own database objects
    whenever changes happen in your attached calendars.
-   Check out the [docs on HTTP Sync](/docs/httpsync/).
+   Check out the [docs on HTTP Sync]({% link docs/integrating/httpsync.md %}).
 
-
-<a id="getting-help"></a>
-
-## [Getting Help](#getting-help)
+## Getting Help
 
 We know from experience that using WebhookDB to integrate a robust Google Calendar sync
 is a lot simpler  than using the Google Calendar API directly, but it's still not trivial.
 Maybe something like 1-2 hours instead of weeks.
 
-If you need any help, we're here to assist. Just email <a href="mailto:hello@webhookdb.com">hello@webhookdb.com</a>
+If you need any help, we're here to assist. Just email [hello@webhookdb.com](mailto:hello@webhookdb.com)
 and we'll get back to you right away.
