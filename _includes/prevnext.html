@@ -1,0 +1,6 @@
+---
+nextLabel: Next
+---
+<div style="display: flex; justify-content: space-between; margin: 32px 16px 32px">
+    <a href="{% link {{include.prev}} %}">← Previous</a>{% if include.next %}<a href="{% link {{include.next}} %}">{{ include.nextLabel | default: 'Next' }} →</a>{% endif %}
+</div>

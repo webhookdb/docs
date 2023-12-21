@@ -1,7 +1,7 @@
 ---
-title: FAQ
+title: Styleguide
 layout: home
-nav_order: 200
+nav_exclude: true
 ---
 
 Here is the FAQ.

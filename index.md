@@ -14,11 +14,11 @@ Instead of making calls to external services, WebhookDB automatically and immedi
 Because the data is resident in your own database (or on a hosted plan via [WebhookDB Cloud](https://webhookdb.com)),
 working with APIs becomes as fast and reliable as working with your own data.
 
-[Learn more]({% link _guides/getting-started.md %}){: .btn .btn-blue }
+[Learn more]({% link docs/getting-started/index.md %}){: .btn .btn-blue }
 
 ## Popular Features 🔥
 
-### [Get going in seconds →]({% link _guides/getting-started.md %})
+### [Get going in seconds →]({% link docs/getting-started/index.md %})
 
 While these docs explain how WebhookDB works, you don't need to worry about most of it to get started.
 You just run WebhookDB (we suggest using [WebhookDB Cloud](https://webhookdb.com) to get started),
