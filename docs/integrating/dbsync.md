@@ -45,4 +45,4 @@ Other databases, including DynamoDB, Redshift, BigQuery, MySQL, and SQL Server a
 
 For more information on working with DB Syncing, you can check out the [`dbsync` manual page]({% link _manual/dbsync.md %}).
 
-{% include prevnext.html prev="docs/integrating/index.md" next="docs/integrating/httpsync.md" %}
+{% include prevnext.html prev="docs/integrating/query.md" next="docs/integrating/httpsync.md" %}

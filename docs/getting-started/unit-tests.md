@@ -130,7 +130,8 @@ It took a couple minutes to write. That's the power of working with WebhookDB wh
 Needless to say, the application code is also many times faster than
 having to check Stripe via its API.
 
-You can see more examples in the [webhookdb-demos repo](https://github.com/webhookdb/webhookdb-demos) on GitHub.
+You can see more code in the [webhookdb-demos repo](https://github.com/webhookdb/webhookdb-demos) on GitHub,
+including [this Unit Testing example](https://github.com/lithictech/webhookdb-demos/tree/main/unittest-rb).
 
 #TODO
 
