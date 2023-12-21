@@ -11,4 +11,4 @@ RUN bundle install
 WORKDIR /app
 
 ENTRYPOINT ["jekyll"]
-CMD ["serve", "--port", "19040", "--host", "0.0.0.0", "--watch", "--drafts", "--future"]
+CMD ["serve", "--port", "19040", "--host", "0.0.0.0", "--watch", "--livereload", "--drafts", "--future"]
