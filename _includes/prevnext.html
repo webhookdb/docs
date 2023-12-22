@@ -1,3 +1,3 @@
 <div class="d-flex flex-justify-between my-6 mx-4">
-    <a href="{% link {{include.prev}} %}">← Previous</a>{% if include.next %}<a href="{% link {{include.next}} %}">{{ include.nextLabel | default: 'Next' }} →</a>{% endif %}
+    {% if include.prev %}<a href="{% link {{include.prev}} %}" class="w-100">← {{ include.prevLabel | default: 'Previous' }}</a>{% endif %}{% if include.next %}<a href="{% link {{include.next}} %}" class="w-100 text-right">{{ include.nextLabel | default: 'Next' }} →</a>{% endif %}
 </div>

@@ -91,7 +91,7 @@ if settings.TESTING:
 Using WebhookDB in the tests themselves is far more straightforward.
 
 Let's say that in your application you want to look at a user's bank transactions
-to see if they've been paying their rent. You are using our [Plaid integration]({% link _integrations/plaid.md %})
+to see if they've been paying their rent. You are using our [Plaid integration]({% link _guides/plaid.md %})
 to connect to a user's bank account.
 
 You would store the user's Plaid Account ID in your database.

@@ -1,6 +1,7 @@
 ---
 title: Google Calendar
 layout: home
+nav_order: 1000
 ---
 
 # Google Calendar

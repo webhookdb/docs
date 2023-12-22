@@ -1,6 +1,7 @@
 ---
 title: iCalendar
 layout: home
+nav_order: 1200
 ---
 
 The [iCalendar](https://en.wikipedia.org/wiki/ICalendar) format is used to describe

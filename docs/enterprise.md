@@ -11,8 +11,8 @@ That is, if you're directly making money from a service using WebhookDB, it's pr
 
 These replicators include:
 
-- [Plaid]({% link _integrations/plaid.md %})
-- [Google Calendar]({% link _integrations/plaid.md %})
+- [Plaid]({% link _guides/plaid.md %})
+- [Google Calendar]({% link _guides/plaid.md %})
 - Microsoft Outlook
 - Channel managers including BookingPal, NextPax, and CloudBeds 
 - Quickbooks
