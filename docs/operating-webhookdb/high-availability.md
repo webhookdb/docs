@@ -31,4 +31,4 @@ you may want to keep a small Postgres instance in `HA_POSTGRES_URLS` for peace o
 
 #TODO
 
-{% include prevnext.html prev="docs/operating-webhookdb/run-locally.md" %}
+{% include prevnext.html prev="docs/operating-webhookdb/run-locally.md" next="docs/operating-webhookdb/securing.md" %}

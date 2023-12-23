@@ -1,76 +1,112 @@
 ---
 title: Securing Your Database
-path: /docs/securing
-order: 65
+layout: home
+nav_order: 65
+parent: Operating WebhookDB
 ---
 
-One of the amazing features of [API2SQL](/docs/api2sql/)
-is that you don't need to learn anything new about securing access to your data.
+# Securing Your Database
 
-If you are using the hosted version of WebhookDB,
-when you create a service integration,
-you will get a read-only database URL you can use to access
-the replicated data for your organization.
+{: .notice }
+This article only applies to WebhookDB [self-hosting](%{ link docs/operating-webhookdb/self-hosting.md %})
+and [bring-your-own-database]({% link docs/operating-webhookdb/byodb.md %}).
+When using [WebookDB Cloud](https://webhookdb.com),
+you get a readonly database connection string that you can treat
+like any other application secret.
 
-The ability to provision additional and scoped read-only connections
-is on our roadmap. Please email <a href="mailto:hello@webhookdb.com">hello@webhookdb.com</a>
-if this is something you need.
+One of the exciting features of [API2SQL]({% link _concepts/api2sql.md %})
+is that, rather than have to design and implement redundant features like scoped tokens,
+you can use the security capabilities of your database. Similar to how API2SQL allows arbitrary querying
+of replicated API data, API2SQL allows arbitrary security mechanisms to be placed on top of it too.
 
-<a id="self-hosted"></a>
+## Read-only users
 
-## [Self-Hosted](#self-hosted)
-
-There are two types of database servers you need to worry about when self-hosting.
-
-First is the WebhookDB application database server.
-Treat this as a normal application database (try to limit public access, etc.).
-
-The second are the database servers that WebhookDB replicates data to.
-Note that this can be the same database server as used by the application.
-These servers are usually publicly exposed, but you can also put them into a private network
-and proxy requests yourself through your own authentication layer.
-
-Because you run this server yourself, you can administer it in the usual way.
-You can create users/roles scoped to just the tables you need.
-There are many resources about creating and scoping roles you can refer to.
+When self-hosting replicated data, you can create your own scoped, read-only database users
+that can be shared with clients.
 
 For example, let's say we have an organization with a single integration:
 
-```arff
+```
 $ webhookdb db connection
-postgres://aro5a7bca56dae1e774ac:a5a901a18fd3aa56b3a@db.mycompany.com:5432/adb5a7c1e8b
+postgres://aro5a7bca56dae1e774ac:a5a901a18fd3aa56b3a@db.mycompany.com:5432/adb16a635253766ba75617
 $ webhookdb integrations list
-id                   name             table
-svi_0d675ecfeb3fb9ed stripe-charges   stripe_charges_v1_d50b
-svi_c1lih496odohq4af stripe-customers stripe_customers_v1_fa4d
+id                   name               table
+svi_0d675ecfeb3fb9ed stripe_charge_v1   stripe_charge_v1_d50b
+svi_c1lih496odohq4af stripe_customer_v1 stripe_customer_v1_fa4d
 ```
 
 Let's say you want a service to be able to access Stripe Charges,
 but not Customers.
 
-Log in as an admin of the `db.mycompany.com` database server,
-and run the following:
+Log in as an admin of the database server, and run the following:
 
 ```sql
 CREATE ROLE chargeuser PASSWORD 'abc123' NOSUPERUSER NOCREATEDB NOCREATEROLE NOINHERIT LOGIN;
 REVOKE ALL ON SCHEMA public FROM chargeuser;
 REVOKE ALL ON ALL TABLES IN SCHEMA public FROM chargeuser;
-GRANT CONNECT ON DATABASE adb5a7c1e8b TO chargeuser;
+GRANT CONNECT ON DATABASE adb16a635253766ba75617 TO chargeuser;
 GRANT USAGE ON SCHEMA public TO chargeuser;
-GRANT SELECT ON stripe_charges_v1_d50b TO chargeuser;
+GRANT SELECT ON stripe_charge_v1_d50b TO chargeuser;
 ```
 
 Then you can log in with the new user and confirm you have limited access:
 
-```arff
-$ psql postgres://chargeuser:abc123@db.mycompany.com:5432/adb5a7c1e8b
+```
+$ psql postgres://chargeuser:abc123@db.mycompany.com:5432/adb16a635253766ba75617
 
-adb5a7c1e8b> select count(1) from stripe_charges_v1_d50b;
+adb16a635253766ba75617> select count(1) from stripe_charge_v1_d50b;
 0
 
-adb5a7c1e8b> select count(1) from stripe_customers_v1_fa4d;
-permission denied for table stripe_customers_v1_fa4d
+adb16a635253766ba75617> select count(1) from stripe_customer_v1_fa4d;
+permission denied for table stripe_customer_v1_fa4d
+```
+
+## Row-level security
+
+Continuing from the above example, perhaps we want to allow a client to see Stripe charges from the last 14 days,
+but no older. We can do this with [Row Level Security](https://www.postgresql.org/docs/current/ddl-rowsecurity.html)
+in Postgres.
+
+```sql
+ALTER TABLE stripe_charge_v1_d50b ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY stripe_charge_view_recent ON stripe_charge_v1_d50b
+    FOR SELECT
+    USING (created > now() - '14 days'::interval);
+
+CREATE ROLE recent_viewer PASSWORD 'abc123' LOGIN;
+GRANT CONNECT ON DATABASE adb16a635253766ba75617 TO recent_viewer;
+GRANT USAGE ON SCHEMA public TO recent_viewer;
+GRANT SELECT ON stripe_charge_v1_d50b TO recent_viewer;
+```
+
+If we connect to the database as an admin, we'll see all charges:
+
+```
+$ pgcli postgres://admin:securepassword@db.mycompany.com:5432/adb16a635253766ba75617
+adb16a635253766ba75617> select current_date, stripe_id, created from stripe_charge_v1_d50b;
++--------------+------------+-------------------------------+
+| current_date | stripe_id  | created                       |
+|--------------+------------+-------------------------------|
+| 2023-12-23   | old-charge | 2023-11-23 06:48:55.220327+00 |
+| 2023-12-23   | new-charge | 2023-12-18 06:48:56.422224+00 |
++--------------+------------+-------------------------------+
+```
+
+But if we connect as a normal user (or any user constrained by the row-level security policy),
+we'll see only the newer charges:
+
+```
+$ $ pgcli postgres://recent_viewer:abc123@db.mycompany.com:5432/adb16a635253766ba75617
+adb16a635253766ba75617> select current_date, stripe_id, created from stripe_charge_v1_d50b;
++--------------+------------+-------------------------------+
+| current_date | stripe_id  | created                       |
+|--------------+------------+-------------------------------|
+| 2023-12-23   | new-charge | 2023-12-18 06:48:56.422224+00 |
++--------------+------------+-------------------------------+
 ```
 
 Note that this level of control is impossible to achieve in most APIs,
 but you get it "for free" with WebhookDB and SQL.
+
+{% include prevnext.html prev="docs/operating-webhookdb/high-availability.md" %}
