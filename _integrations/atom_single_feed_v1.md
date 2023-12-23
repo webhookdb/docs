@@ -1,10 +1,10 @@
 ---
-title: Single Atom Feed
+title: Atom Single Feed
 layout: home
 nav_order: 10
 ---
 
-# Single Atom Feed (`atom_single_feed_v1`)
+# Atom Single Feed (`atom_single_feed_v1`)
 
 Convert any Atom XML feed into a database table for querying and persistent archiving.
 
@@ -22,7 +22,7 @@ Docs for this API: [https://en.wikipedia.org/wiki/Atom_(web_standard)](https://e
 
 ## Schema
 
-Tables replicated from Single Atom Feeds have this schema.
+Tables replicated from Atom Single Feeds have this schema.
 Note that the data types listed are for Postgres;
 when [replicating to other databases]({% link _concepts/replication_databases.md %}),
 other data types maybe used.
