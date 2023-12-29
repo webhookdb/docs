@@ -28,6 +28,9 @@ callouts:
   notice:
     title: Note
     color: blue
+  enterprise:
+    title: Enterprise
+    color: yellow
 
 collections:
   guides:

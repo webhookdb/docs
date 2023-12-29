@@ -5,6 +5,10 @@ nav_order: 1000
 ---
 
 # Google Calendar
+{: .no_toc }
+
+1. TOC
+{:toc}
 
 {% include enterprise_integration.md %}
 

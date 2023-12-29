@@ -5,11 +5,15 @@ nav_order: 40
 ---
 
 # Self-Hosted WebhookDB Operations
+{: .no_toc }
 
 This is an operational guide to running WebhookDB in any environment.
 Since WebhookDB has a flexible "self-hosting" setup (container, standard Ruby app, etc),
 it doesn't cover how to run WebhookDB in *your* environment,
 but it does cover what WebhookDB needs from an environment in order to run.
+
+1. TOC
+{:toc}
 
 ## Service Dependencies
 

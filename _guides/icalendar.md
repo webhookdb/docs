@@ -4,6 +4,12 @@ layout: home
 nav_order: 1200
 ---
 
+# iCalendar
+{: .no_toc }
+
+1. TOC
+{:toc}
+
 The [iCalendar](https://en.wikipedia.org/wiki/ICalendar) format is used to describe
 calendars (and more) in a portable format.
 

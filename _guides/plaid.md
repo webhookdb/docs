@@ -5,6 +5,10 @@ nav_order: 1200
 ---
 
 # Plaid
+{: .no_toc }
+
+1. TOC
+{:toc}
 
 {% include enterprise_integration.md %}
 
