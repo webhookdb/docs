@@ -21,14 +21,33 @@ so they can be replayed. See [`webhookdb integration replay`]({% link _manual/in
 
 ## Data server availability
 
+If you are using an API with questionable delivery behavior (or even if not),
+or see a lot of database disruptions in your own infrastructure,
+you can easily run with extra WebhookDB availability for peace of mind.
+
 If there is an error communicating with the primary Postgres or Redis,
 WebhookDB can store the failed webhooks in another Postgres database. Once the outage is resolved,
 the failed webhooks are replayed automatically and idempotently, as if nothing was ever wrong.
 
-To enable this behavior, set the `HA_POSTGRES_URLS` environment variable to a space or comma separated list of fallbacks.
-As long as a fallback is available, handling the webhook will not error. If you are using an API with questionable delivery behavior,
-you may want to keep a small Postgres instance in `HA_POSTGRES_URLS` for peace of mind.
+To enable this behavior, use the following two env vars:
 
-#TODO
+- `LOGGED_WEBHOOKS_RESILIENT_DATABASE_URLS`: Space-separated urls for fallback databases.
+- `LOGGED_WEBHOOKS_RESILIENT_DATABASE_ENV_VARS`: Space-separated envrionment variable names
+  to pull URLs from. If the URL is not static (such as from a Heroku Postgres add-on),
+  you can set these instead.
+  For example, `LOGGED_WEBHOOKS_RESILIENT_DATABASE_ENV_VARS=HEROKU_POSTGRESQL_BLACK_URL`
+  would use the URL string from the `HEROKU_POSTGRESQL_BLACK_URL` env var for logged webhooks.
+
+Note the following about these fallback databases:
+
+- They are used in order, falling back to later ones if earlier ones are not available
+  (urls are before those from env vars). Please file an issue if you need random sampling instead.
+- They can usually be very small. They need to support a write throughput equal to about your
+  number of incoming webhook requests (one write per incoming webhook). Concurrent connections can be low,
+  since the connection is established only for the life of the request
+  (this introduces some additional load, of course).
+- Any database adapter supported by the Sequel gem can be used.
+  See [Sequel's docs](http://sequel.jeremyevans.net/rdoc/files/doc/opening_databases_rdoc.html)
+  for more information.
 
 {% include prevnext.html prev="docs/operating-webhookdb/run-locally.md" next="docs/operating-webhookdb/securing.md" %}
