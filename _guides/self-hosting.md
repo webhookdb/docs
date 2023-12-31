@@ -200,6 +200,14 @@ but want large amounts of production API data replicated into a different databa
 
 You can migrate an organization's data from one database to another using [`webhookdb db migrations`]({% link _manual/migration.md %}).
 
+## Additional operations guides
+
+- [High Availability]({% link docs/operating-webhookdb/high-availability.md %}):
+  Make your WebhookDB deployment high-availability by providing fallover databases to write to if your primary Postgres or Redis are down.
+- [Autoscaling]({% link docs/operating-webhookdb/autoscaling.md %}): Add support for autoscaling of wokers.
+- [Security Considerations]({% link docs/operating-webhookdb/securing.md %}): Additional capabilities and considerations about securing access to your database
+  as you give out database connections to other applications and clients.
+
 ## New Deployment Checklist
 
 - [ ] Provision a new Postgres instance.

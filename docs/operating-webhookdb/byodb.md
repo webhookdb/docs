@@ -7,8 +7,8 @@ nav_order: 20
 
 # Bring Your Own Database (BYODB)
 
-This uses [WebhookDB Cloud]({% link docs/operating-webhookdb/cloud-hosted.md %}),
-but you provide the database that data is replicated to.
+"BYODB" uses [WebhookDB Cloud]({% link docs/operating-webhookdb/cloud-hosted.md %}),
+but you provide the database that data is replicated to, rather than using one of our shared database hosts.
 
 - Webhooks are sent to our servers.
 - Any API keys you provide are stored in our application database.
@@ -25,7 +25,7 @@ and can be tricky to get right.
 Please email [hello@webhookdb.com](mailto:hello@webhookdb.com)
 if you would like to get set up with BYODB.
 
-In the meantime, you can set up a hosted version and we can migrate
-to your database when you're ready.
+In the meantime, you can start on [WebhookDB Cloud]({% link docs/operating-webhookdb/cloud-hosted.md %}
+and we can migrate to your database when you're ready (migrations are lossless and zero-downtime).
 
 {% include prevnext.html prev="docs/operating-webhookdb/cloud-hosted.md" next="docs/operating-webhookdb/self-hosting.md" %}

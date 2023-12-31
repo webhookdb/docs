@@ -7,6 +7,11 @@ nav_order: 60
 
 # High Availability
 
+{: .self-hosting }
+This article only applies to [self-hosting]({% link docs/operating-webhookdb/self-hosting.md %}) WebhookDB.
+When using [WebookDB Cloud](https://webhookdb.com), this is all handled for you.
+But feel free to read on to see how WebhookDB works under the hood.
+
 WebhookDB can be configured for high availability, such as if the primary Postgres or Redis are unavailable.
 
 This is important because while some 3rd party APIs do a good job delivering webhooks reliably, many do not.
@@ -50,4 +55,4 @@ Note the following about these fallback databases:
   See [Sequel's docs](http://sequel.jeremyevans.net/rdoc/files/doc/opening_databases_rdoc.html)
   for more information.
 
-{% include prevnext.html prev="docs/operating-webhookdb/run-locally.md" next="docs/operating-webhookdb/securing.md" %}
+{% include prevnext.html prev="docs/operating-webhookdb/run-locally.md" next="docs/operating-webhookdb/autoscaling.md" %}

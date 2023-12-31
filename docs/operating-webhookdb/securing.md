@@ -7,8 +7,8 @@ parent: Operating WebhookDB
 
 # Securing Your Database
 
-{: .notice }
-This article only applies to WebhookDB [self-hosting](%{ link docs/operating-webhookdb/self-hosting.md %})
+{: .self-hosting }
+This article only applies to WebhookDB [self-hosting]({% link docs/operating-webhookdb/self-hosting.md %})
 and [bring-your-own-database]({% link docs/operating-webhookdb/byodb.md %}).
 When using [WebookDB Cloud](https://webhookdb.com),
 you get a readonly database connection string that you can treat
@@ -109,4 +109,4 @@ adb16a635253766ba75617> select current_date, stripe_id, created from stripe_char
 Note that this level of control is impossible to achieve in most APIs,
 but you get it "for free" with WebhookDB and SQL.
 
-{% include prevnext.html prev="docs/operating-webhookdb/high-availability.md" %}
+{% include prevnext.html prev="docs/operating-webhookdb/autoscaling.md" %}

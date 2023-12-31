@@ -7,3 +7,15 @@ h1 {
 .w-100 {
   width: 100%;
 }
+
+/* Callout customizations */
+
+.enterprise, .self-hosting {
+  margin-top: $sp-6 !important;
+  margin-bottom: $sp-6 !important;
+}
+
+.notice, .warning {
+  margin-top: $sp-5 !important;
+  margin-bottom: $sp-5 !important;
+}

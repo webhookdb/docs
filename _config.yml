@@ -31,6 +31,9 @@ callouts:
   enterprise:
     title: Enterprise
     color: yellow
+  self-hosting:
+    title: Self-Hosting Operations
+    color: yellow
 
 collections:
   guides:
