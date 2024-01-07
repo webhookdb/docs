@@ -19,3 +19,21 @@ h1 {
   margin-top: $sp-5 !important;
   margin-bottom: $sp-5 !important;
 }
+
+.integration-logo-list {
+  h2 {
+    margin-top: $sp-3;
+    margin-bottom: $sp-6;
+    font-size: $sp-7 !important;
+  }
+
+  img {
+    padding: 0;
+    margin-bottom: $sp-6;
+    margin-right: $sp-7;
+    height: auto;
+    max-height: 60px;
+    max-width: 240px;
+    border-style: none;
+  }
+}
