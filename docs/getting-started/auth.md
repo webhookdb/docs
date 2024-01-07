@@ -16,15 +16,15 @@ the `username` flag in a separate `auth login` command.
 $ Welcome to WebhookDB!
 Please enter your email:
 
-joe@lithic.tech
+joe@webhookdb.com
 
 Welcome back!
 
-To finish logging in, please look for an email we just sent to natalie@lithic.tech.
+To finish logging in, please look for an email we just sent to joe@webhookdb.com.
 It contains a One Time Password used to log in.
 You can enter it here, or if you want to finish up from a new prompt, use:
 
-  webhookdb auth login --username=joe@lithic.tech --token=<6 digit token>
+  webhookdb auth login --username=joe@webhookdb.com --token=<6 digit token>
 
 Enter the token from your email:
 
