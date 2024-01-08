@@ -1,7 +1,7 @@
 ---
 title: Intercom Auth
 layout: home
-nav_order: 360
+nav_order: 410
 ---
 
 # Intercom Auth (`intercom_marketplace_root_v1`)

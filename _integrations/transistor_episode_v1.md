@@ -1,7 +1,7 @@
 ---
 title: Transistor Episode
 layout: home
-nav_order: 740
+nav_order: 790
 ---
 
 # Transistor Episode (`transistor_episode_v1`)

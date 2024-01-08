@@ -1,7 +1,7 @@
 ---
 title: Sponsy Slot
 layout: home
-nav_order: 590
+nav_order: 640
 ---
 
 # Sponsy Slot (`sponsy_slot_v1`)

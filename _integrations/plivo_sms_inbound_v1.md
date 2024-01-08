@@ -1,7 +1,7 @@
 ---
 title: Plivo Inbound SMS Message
 layout: home
-nav_order: 500
+nav_order: 550
 ---
 
 # Plivo Inbound SMS Message (`plivo_sms_inbound_v1`)

@@ -1,7 +1,7 @@
 ---
 title: Plaid Item
 layout: home
-nav_order: 480
+nav_order: 530
 ---
 
 # Plaid Item (`plaid_item_v1`)

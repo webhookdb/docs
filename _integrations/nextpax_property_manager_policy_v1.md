@@ -1,7 +1,7 @@
 ---
 title: NextPax Property Manager Policy
 layout: home
-nav_order: 430
+nav_order: 480
 ---
 
 # NextPax Property Manager Policy (`nextpax_property_manager_policy_v1`)

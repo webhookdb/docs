@@ -1,7 +1,7 @@
 ---
 title: Sponsy Status
 layout: home
-nav_order: 600
+nav_order: 650
 ---
 
 # Sponsy Status (`sponsy_status_v1`)

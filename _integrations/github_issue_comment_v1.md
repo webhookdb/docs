@@ -1,7 +1,7 @@
 ---
 title: GitHub Issue Comment
 layout: home
-nav_order: 130
+nav_order: 200
 ---
 
 # GitHub Issue Comment (`github_issue_comment_v1`)

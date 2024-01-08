@@ -1,7 +1,7 @@
 ---
 title: Increase Transaction
 layout: home
-nav_order: 320
+nav_order: 370
 ---
 
 # Increase Transaction (`increase_transaction_v1`)

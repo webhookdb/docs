@@ -1,7 +1,7 @@
 ---
 title: Increase Wire Transfer
 layout: home
-nav_order: 330
+nav_order: 380
 ---
 
 # Increase Wire Transfer (`increase_wire_transfer_v1`)

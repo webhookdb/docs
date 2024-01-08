@@ -1,7 +1,7 @@
 ---
 title: NextPax Property Policy
 layout: home
-nav_order: 450
+nav_order: 500
 ---
 
 # NextPax Property Policy (`nextpax_property_policy_v1`)

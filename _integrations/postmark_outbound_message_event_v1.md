@@ -1,7 +1,7 @@
 ---
 title: Postmark Outbound Message Event
 layout: home
-nav_order: 520
+nav_order: 570
 ---
 
 # Postmark Outbound Message Event (`postmark_outbound_message_event_v1`)

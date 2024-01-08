@@ -1,7 +1,7 @@
 ---
 title: Sponsy Customer
 layout: home
-nav_order: 560
+nav_order: 610
 ---
 
 # Sponsy Customer (`sponsy_customer_v1`)

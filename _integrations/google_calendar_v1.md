@@ -1,7 +1,7 @@
 ---
 title: Google Calendar
 layout: home
-nav_order: 230
+nav_order: 280
 ---
 
 # Google Calendar (`google_calendar_v1`)

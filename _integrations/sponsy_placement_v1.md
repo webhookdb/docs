@@ -1,7 +1,7 @@
 ---
 title: Sponsy Placement
 layout: home
-nav_order: 570
+nav_order: 620
 ---
 
 # Sponsy Placement (`sponsy_placement_v1`)

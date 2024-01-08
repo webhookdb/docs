@@ -1,7 +1,7 @@
 ---
 title: Transistor Episode Stats
 layout: home
-nav_order: 730
+nav_order: 780
 ---
 
 # Transistor Episode Stats (`transistor_episode_stats_v1`)

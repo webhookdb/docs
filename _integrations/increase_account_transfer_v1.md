@@ -1,7 +1,7 @@
 ---
 title: Increase Account Transfer
 layout: home
-nav_order: 270
+nav_order: 320
 ---
 
 # Increase Account Transfer (`increase_account_transfer_v1`)

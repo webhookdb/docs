@@ -1,7 +1,7 @@
 ---
 title: Stripe Invoice Item
 layout: home
-nav_order: 650
+nav_order: 700
 ---
 
 # Stripe Invoice Item (`stripe_invoice_item_v1`)

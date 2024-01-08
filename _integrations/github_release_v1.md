@@ -1,7 +1,7 @@
 ---
 title: GitHub Release
 layout: home
-nav_order: 160
+nav_order: 230
 ---
 
 # GitHub Release (`github_release_v1`)

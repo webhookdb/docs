@@ -1,7 +1,7 @@
 ---
 title: NextPax Calendar
 layout: home
-nav_order: 420
+nav_order: 470
 ---
 
 # NextPax Calendar (`nextpax_calendar_v1`)

@@ -1,7 +1,7 @@
 ---
 title: Sponsy Publication
 layout: home
-nav_order: 580
+nav_order: 630
 ---
 
 # Sponsy Publication (`sponsy_publication_v1`)

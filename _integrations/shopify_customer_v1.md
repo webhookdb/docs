@@ -1,7 +1,7 @@
 ---
 title: Shopify Customer
 layout: home
-nav_order: 530
+nav_order: 580
 ---
 
 # Shopify Customer (`shopify_customer_v1`)

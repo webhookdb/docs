@@ -58,4 +58,4 @@ CREATE TABLE public.front_message_v1_fixture (
 );
 ```
 
-{% include prevnext.html prev='_integrations/front_marketplace_root_v1.md' prevLabel='front_marketplace_root_v1' next='_integrations/google_calendar_event_v1.md' nextLabel='google_calendar_event_v1' %}
+{% include prevnext.html prev='_integrations/front_marketplace_root_v1.md' prevLabel='front_marketplace_root_v1' next='_integrations/github_issue_comment_v1.md' nextLabel='github_issue_comment_v1' %}

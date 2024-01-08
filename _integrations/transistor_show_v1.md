@@ -1,7 +1,7 @@
 ---
 title: Transistor Show
 layout: home
-nav_order: 750
+nav_order: 800
 ---
 
 # Transistor Show (`transistor_show_v1`)

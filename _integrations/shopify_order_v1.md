@@ -1,7 +1,7 @@
 ---
 title: Shopify Order
 layout: home
-nav_order: 540
+nav_order: 590
 ---
 
 # Shopify Order (`shopify_order_v1`)

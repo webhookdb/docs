@@ -1,7 +1,7 @@
 ---
 title: Google Calendar Event
 layout: home
-nav_order: 200
+nav_order: 250
 ---
 
 # Google Calendar Event (`google_calendar_event_v1`)
@@ -89,4 +89,4 @@ CREATE INDEX IF NOT EXISTS svi_fixture_b608e6f9840635a044bcb3973a6b3608_idx ON p
 CREATE INDEX IF NOT EXISTS svi_fixture_421c6a622b9cb00eae0463b7301125a4_idx ON public.google_calendar_event_v1_fixture (external_owner_id, google_calendar_id, start_date, end_date) WHERE (("status" IS DISTINCT FROM 'cancelled') AND ("start_date" IS NOT NULL));
 ```
 
-{% include prevnext.html prev='_integrations/front_message_v1.md' prevLabel='front_message_v1' next='_integrations/google_calendar_list_v1.md' nextLabel='google_calendar_list_v1' %}
+{% include prevnext.html prev='_integrations/github_repository_event_v1.md' prevLabel='github_repository_event_v1' next='_integrations/google_calendar_list_v1.md' nextLabel='google_calendar_list_v1' %}

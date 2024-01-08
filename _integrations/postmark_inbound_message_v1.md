@@ -1,7 +1,7 @@
 ---
 title: Postmark Inbound Message
 layout: home
-nav_order: 510
+nav_order: 560
 ---
 
 # Postmark Inbound Message (`postmark_inbound_message_v1`)

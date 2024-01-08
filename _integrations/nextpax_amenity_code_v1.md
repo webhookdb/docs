@@ -1,7 +1,7 @@
 ---
 title: NextPax Amenity Code
 layout: home
-nav_order: 400
+nav_order: 450
 ---
 
 # NextPax Amenity Code (`nextpax_amenity_code_v1`)

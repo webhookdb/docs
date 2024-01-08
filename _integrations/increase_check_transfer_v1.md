@@ -1,7 +1,7 @@
 ---
 title: Increase Check Transfer
 layout: home
-nav_order: 300
+nav_order: 350
 ---
 
 # Increase Check Transfer (`increase_check_transfer_v1`)

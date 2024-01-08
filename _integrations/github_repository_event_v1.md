@@ -1,7 +1,7 @@
 ---
 title: GitHub Repository Activity Event
 layout: home
-nav_order: 170
+nav_order: 240
 ---
 
 # GitHub Repository Activity Event (`github_repository_event_v1`)
@@ -61,4 +61,4 @@ CREATE INDEX IF NOT EXISTS svi_fixture_row_updated_at_idx ON public.github_repos
 CREATE INDEX IF NOT EXISTS svi_fixture_actor_id_idx ON public.github_repository_event_v1_fixture (actor_id);
 ```
 
-{% include prevnext.html prev='_integrations/github_release_v1.md' prevLabel='github_release_v1' next='_integrations/icalendar_calendar_v1.md' nextLabel='icalendar_calendar_v1' %}
+{% include prevnext.html prev='_integrations/github_release_v1.md' prevLabel='github_release_v1' next='_integrations/google_calendar_event_v1.md' nextLabel='google_calendar_event_v1' %}

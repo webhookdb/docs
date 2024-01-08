@@ -1,7 +1,7 @@
 ---
 title: Plaid Transaction
 layout: home
-nav_order: 490
+nav_order: 540
 ---
 
 # Plaid Transaction (`plaid_transaction_v1`)

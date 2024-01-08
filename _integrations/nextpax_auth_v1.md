@@ -1,7 +1,7 @@
 ---
 title: NextPax Auth
 layout: home
-nav_order: 410
+nav_order: 460
 ---
 
 # NextPax Auth (`nextpax_auth_v1`)

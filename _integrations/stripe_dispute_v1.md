@@ -1,7 +1,7 @@
 ---
 title: Stripe Dispute
 layout: home
-nav_order: 640
+nav_order: 690
 ---
 
 # Stripe Dispute (`stripe_dispute_v1`)

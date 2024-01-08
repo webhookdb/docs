@@ -1,7 +1,7 @@
 ---
 title: GitHub Issue
 layout: home
-nav_order: 140
+nav_order: 210
 ---
 
 # GitHub Issue (`github_issue_v1`)

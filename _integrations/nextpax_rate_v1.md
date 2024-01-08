@@ -1,7 +1,7 @@
 ---
 title: NextPax Rate
 layout: home
-nav_order: 470
+nav_order: 520
 ---
 
 # NextPax Rate (`nextpax_rate_v1`)

@@ -1,7 +1,7 @@
 ---
 title: Outlook Calendar
 layout: home
-nav_order: 390
+nav_order: 440
 ---
 
 # Outlook Calendar (`microsoft_calendar_v1`)

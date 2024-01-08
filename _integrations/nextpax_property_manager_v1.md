@@ -1,7 +1,7 @@
 ---
 title: NextPax Property Manager
 layout: home
-nav_order: 440
+nav_order: 490
 ---
 
 # NextPax Property Manager (`nextpax_property_manager_v1`)

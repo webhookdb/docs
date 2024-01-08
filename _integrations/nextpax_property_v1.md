@@ -1,7 +1,7 @@
 ---
 title: NextPax Property
 layout: home
-nav_order: 460
+nav_order: 510
 ---
 
 # NextPax Property (`nextpax_property_v1`)

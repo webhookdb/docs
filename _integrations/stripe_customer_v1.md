@@ -1,7 +1,7 @@
 ---
 title: Stripe Customer
 layout: home
-nav_order: 630
+nav_order: 680
 ---
 
 # Stripe Customer (`stripe_customer_v1`)
