@@ -5,6 +5,10 @@ nav_order: 30
 ---
 
 # Custom Integrations
+{: .no_toc }
+
+1. TOC
+{:toc}
 
 Custom integrations can be developed in one of two ways:
 
@@ -52,35 +56,22 @@ Write your code (usually just replicators) and then build a gem for it.
 The [webhookdb/custom-integrations-demo repo](https://github.com/webhookdb/custom-integrations-demo)
 contains an example gemspec showing one approach to this.
 
-Then, to deploy WebhookDB, you can either:
+## Deploying WebhookDB with your own replicators
 
-- Fork the `webhookdb` repo and add your gem to the `Gemfile`, which will build it into the built image.
-  This is simpler, and what you'd do if deploying the container, or are already customizing a fork.
-- Or, create a repo for deployment, which depends on the `webhookdb` gem and your custom replicators gem.
-  This is what you'd do if deploying via Heroku without a container, or you want to avoid a fork.
-  We do this for WebhookDB Cloud, which has WebhookDB Enterprise replicators available,
-  for instance.
+If you have separately distributed replicators, you'll need to put them together with WebhookDB.
+There are two ways to do this:
 
-### Notes
+**1) Fork the `webhookdb` repo.** Then add your gem to the `Gemfile`, which will build it into the built image.
+This is a much simpler option, because it doesn't require any new repos.
+The only downside is it requires you to main a fork.
 
-**Instead of a private package server,** you can use your gem directly from GitHub:
+**2) Create a repo for deployment.** It depends on the `webhookdb` gem,
+and any other gems. It also allows more extensive customization about the deployment situation,
+without having to worry about maintaining your branch (for example, if you need a custom Docker image,
+this can be a good option).
 
-```ruby
-# Gemfile
-gem :my_custom_replicators, git: "https://github.com/myorg/my-custom-replicators.git", ref: "main"
-```
+We use the 'separate repo' approach for [WebhookDB Cloud]({% link docs/cloud.md %}),
+since it requires the gem containing [enterprise integrations]({% link docs/enterprise.md %}).
 
-**To build tests,** you will need to add a couple gems to your Gemfile's test group
-that WebhookDB's fixtures and behaviors depend on:
-
-```ruby
-# Gemfile
-group :test do
-  gem "faker"
-  gem "fluent_fixtures"
-  gem "rspec"
-end
-```
-
-**To preview emails,** check out the `Makefile`. In fact, for examples of how to do anything relevant, check out the Makefile.
-The example repository contains pretty much everything you should need to do for a gem with custom replicators.
+{: .notice }
+See <https://github.com/webhookdb/custom-deployment-example> for an example/starter deployment repo.
