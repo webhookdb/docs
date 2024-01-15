@@ -12,7 +12,7 @@ Once you have connected to WebhookDB, we will immediately start listening for ch
 
 To access your database, use the database string provided to you on successful signup:
 
-<img src="/assets/images/front-oauth-success-screenshot.png" style="width: calc(100% - 1rem); margin-top: 1rem; margin-left: 0.5rem; margin-right: 0.5rem; margin-bottom: 1rem; height: auto;"></img>
+<img src="/assets/images/front-oauth-success-screenshot.png" style="width: calc(100% - 1rem); margin-top: 1rem; margin-left: 0.5rem; margin-right: 0.5rem; margin-bottom: 1rem; height: auto;">
 
 If for some reason you lose that string, you can use our CLI either by downloading it or heading to our website for [the online version](https://webhookdb.com/terminal).
 
