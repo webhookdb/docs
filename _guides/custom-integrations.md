@@ -34,6 +34,10 @@ so they will never conflict with any files upstream (this folder will always be 
 That way, you can fork WebhookDB, build and deploy an image from your fork,
 and it will include your own replicators without any additional work.
 
+## Writing and testing your replicator
+
+Check out the [Guide to Building a Replicator]({% link _guides/build-replicator.md %}).
+
 ## Distributing your own replicators
 
 If you have replicators that you want to distribute, you can build them as a Ruby gem.
