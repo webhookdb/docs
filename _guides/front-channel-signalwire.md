@@ -17,11 +17,6 @@ This channel only takes a couple minutes to set up:
 - Create a Signalwire Message integration, so your SignalWire SMS will sync
   into your WebhookDB replication table.
   - Run `webhookdb integrations create signalwire_message_v1` and follow the prompts.
-- Create a Front integration. This must be done via the Front Marketplace.
-  - Go to <https://api.webhookdb.com/v1/install/front>
-    or <https://app.frontapp.com/settings/apps/details/webhookdb/overview>.
-  - Complete installation by authorizing WebhookDB's access to Front.
-- Head back to <https://webhookdb.com/terminal>
 - Create the Front/SignalWire Channel.
   - Run `webhookdb integrations create front_signalwire_message_channel_app_v1`
     and follow the prompts.
@@ -51,6 +46,10 @@ The old API key will be replaced with a new key.
 You must copy the new key and update your Channel settings in Front.
 
 ## More information
+
+If you want to replicate your Front data into an SQL database,
+you can use our main WebhookDB integration.
+Install it [on the Front App Store](https://app.frontapp.com/settings/apps/details/webhookdb/overview).
 
 Check out [our guide]({% link docs/getting-started/index.md %}) to add additional APIs,
 and to sync data to your [data warehouse]({% link docs/integrating/dbsync.md %})
