@@ -18,10 +18,10 @@ The standard pattern for webhooks is:
 1. Something happens in an external system.
 2. The external system sends you an event (usually they send an HTTP POST).
 3. Your backend validates the event is authentic.
-4. Your backend enques the event for further processing, and returns a successful response.
+4. Your backend enqueues the event for further processing, and returns a successful response.
 5. Your backend processes the event further, like synchronizing data from the external service, or updating your own data based on the external event.
 
-The big challenge here is that the order events happen in the external system (first step), and the order your backend processes events (last step), can happen in any order. Both because events from the external system may reach your application in any order, and because your backend may not process them in serial.
+The big challenge here is that the order events happen in the external system (first step), and the order your backend processes events (last step), can happen in any order. Because both events from the external system may reach your application in any order, and because your backend may not process them in serial.
 
 So you could have, for example, have a user's name in an external system that changes from 'Kyle' to 'Taylor'; when you process these events, you either need to know which of them to throw out (this is tricky to build, and not always possible), or you need to re-query the external system for the latest data (which is potentially slow).
 
@@ -52,7 +52,7 @@ Here's how it works:
 
 It's important to note that *you will not need to handle concurrent HTTP Sync webhooks.*
 
-Instead, all processing happens within your API endpoint. Your endpoint can take up to a minute (or more, when [self-hosting](/docs/self-hosting))
+Instead, all processing happens within your API endpoint. Your endpoint can take up to a minute (or more, when [self-hosting]({% link docs/operating-webhookdb/self-hosting.md %}))
 to respond, to make sure you have time to do what you need to with the changed data. The page size can also be modified to send fewer rows.
 
 When your endpoint returns successfully, we assume that page has been processed, so can POST the next page, until there are no new changes. If your endpoint returns an error, we retry the POST until it succeeds.
