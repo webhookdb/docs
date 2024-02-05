@@ -35,3 +35,9 @@ Use [Notifications]({% link docs/integrating/notifications.md %}) to send update
 This is similar to HTTP Sync but requests are made asynchronously, like normal webhooks.
 Importantly, this works even for integrations that do not themselves support webhooks
 (ie they are *backfill-only*).
+
+### 5. Saved Queries
+
+Use [Saved Queries]({% link docs/integrating/saved-queries.md %}) to call database queries
+from public sites, like maps and dashboards. This creates a secure way to present
+data from your database, with needing to expose your connection string.
