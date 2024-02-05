@@ -14,11 +14,16 @@ The City of Portland used to provide this, but stopped doing so.
 
 This type of thing seems, and should be, simple, but can quickly get out of hand.
 
+<img src="/assets/images/pdxreporter-map.jpg" style="width: calc(100% - 1rem); max-width: 400px; margin-top: 1rem; margin-left: 0.5rem; margin-right: 0.5rem; margin-bottom: 1rem; height: auto;">
+
 Using WebhookDB, BikeLoud was able to break down the work into three straightforward pieces:
 
 - Use WebhookDB to replicate the PDX Reporter RSS feed into a database.
 - Build a query against that database to get data to render markers.
 - Serve a static webpage with the map.
+
+{: .notice}
+Find the UI code for this tutorial at <https://github.com/webhookdb/pdxreporter-map>.
 
 1. TOC
 {:toc}
@@ -75,42 +80,61 @@ or you can use `webhookdb integration info atom_single_feed_v1`.
 ```sql
 WITH n AS (
     SELECT (
-               '<root>' ||
-                replace(
-                        regexp_replace(
-                                regexp_replace(
-                                        replace(
-                                                replace(data -> 'content' ->> 'value', '&lt;', '<'),
-                        '&gt;', '>'),
-                    E'^[\n\s\t]*', ''
-                ),
-                E'[\n\s\t]*$', ''
-            ),
-            'width=200&amp;height=200">', 'width=200&amp;height=200"></img>'
-        ) ||
-        '</root>')::xml AS contentxml,
-        title,
-        to_char(timezone('America/Los_Angeles', published), 'FMDy Mon FMDD, YYYY FMHH:MI am') as published,
-        geo_lat,
-        geo_lng,
-        entry_id,
-        data->>'status' AS status,
-        data->'category'->>'term' as category
-    FROM atom_single_feed_v1_4844
+        -- html may have no root, xml must have a single one
+       '<root>' ||
+        -- Make sure <img> tag has a closing tag
+        replace(
+            -- Strip leading whitespace
+            regexp_replace(
+                -- strip trailing whitespace
+                regexp_replace(
+                    -- replace <dl>, <dd>, and <dt> opening tags.
+                    -- We cannot just replace < and > everywhere since they may be used in a comment.
+                    replace(
+                    replace(
+                    replace(
+                        -- replace </dl>, </dd>, and </dt>.
+                        replace(
+                        replace(
+                        replace(
+                            -- replace img opening tag
+                            replace(data -> 'content' ->> 'value', '&lt;img ', '<img '),
+                            '&lt;/dt&gt;', '</dt>'),
+                            '&lt;/dd&gt;', '</dd>'),
+                            '&lt;/dl&gt;', '</dl>'),
+                    '&lt;dt&gt;', '<dt>'),
+                    '&lt;dd&gt;', '<dd>'),
+                    '&lt;dl&gt;', '<dl>'),
+                E'^[\n\s\t]*', ''),
+            E'[\n\s\t]*$', ''),
+
+       'width=200&amp;height=200"&', 'width=200&amp;height=200"></img>'
+       ) ||
+       '</root>')::xml AS contentxml,
+       title,
+       to_char(timezone('America/Los_Angeles', published), 'FMDy Mon FMDD, YYYY FMHH:MI am') as published,
+       published as timestamp,
+       geo_lat,
+       geo_lng,
+       entry_id,
+       data->>'status' AS status,
+       data->'category'->>'term' as category
+    FROM pdxreporterrss
 )
 (
     SELECT
-         title,
-         published,
-         geo_lat,
-         geo_lng,
-         status,
-         category,
-         entry_id,
-         (xpath(E'/root/dl/dt[text()=\'Address\']/following-sibling::dd[1]/text()', contentxml)::text[])[1] as address,
-         (xpath(E'/root/dl/dt[text()=\'Comments\']/following-sibling::dd[1]/text()', contentxml)::text[])[1] as comment
+        title,
+        published,
+        geo_lat,
+        geo_lng,
+        status,
+        category,
+        entry_id,
+        (xpath(E'/root/dl/dt[text()=\'Address\']/following-sibling::dd[1]/text()', contentxml)::text[])[1] as address,
+        (xpath(E'/root/dl/dt[text()=\'Comments\']/following-sibling::dd[1]/text()', contentxml)::text[])[1] as comment
     FROM n
-    ORDER BY published DESC
+    ORDER BY timestamp DESC
+    LIMIT 1000
 );
 ```
 
@@ -125,16 +149,16 @@ What is the query used for? PDX Reporter Map
 Enter the SQL you would like to run:
 ```
 
-Make it public (make note of your saved query ID, starting with `cq_`):
+Make it public (make note of your saved query ID, starting with `svq_`):
 
 ```
-$ webhookdb saved-query update --field=public --value=true cq_m7c4zgy4sfza0eqwic7wqavc
-You have updated saved query cq_m7c4zgy4sfza0eqwic7wqavc with public set to true
+$ webhookdb saved-query update --field=public --value=true svq_m7c4zgy4sfza0eqwic7wqavc
+You have updated saved query svq_m7c4zgy4sfza0eqwic7wqavc with public set to true
 ```
 
 If you need to modify the saved query, run:
 
-    $ webhookdb saved-query update --field=sql cq_m7c4zgy4sfza0eqwic7wqavc
+    $ webhookdb saved-query update --field=sql svq_m7c4zgy4sfza0eqwic7wqavc
 
 ## Render your map
 
@@ -143,10 +167,89 @@ Let's see what our results look like:
     $ webhookdb saved-query list
 
 Look at the `RUN URL` column, and copy the URL, and pass it to `curl`.
+
 Or we can fetch it inline:
 
-   $ curl `webhookdb saved-query info --field=run_url cq_m7c4zgy4sfza0eqwic7wqavc`
+   $ curl `webhookdb saved-query info --field=run_url svq_m7c4zgy4sfza0eqwic7wqavc`
 
 That should print out the response, with the shape `{"rows": []}`.
 
 If that's all working, we can put our map together.
+
+Our map is a single `index.html` file with inline CSS and JavaScript.
+You can find the full code here: <https://github.com/webhookdb/pdxreporter-map>
+
+Here is the simplified version:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Get this code from https://github.com/webhookdb/pdxreporter-map -->
+<meta charset="utf-8">
+<title>PDX Reporter Map | BikeLoud PDX</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.js"></script>
+<style>
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+.marker {
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 50%);
+    border-radius: 50%;
+    padding: 2px;
+    border: rgba(0, 0, 0, 30%) 1px solid;
+}
+.mapboxgl-popup-content {
+    border-radius: 6px;
+}
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1Ijoicm9ibGl0aGljIiwiYSI6ImNsczg3ajY1dzF5bnkya24yeWp5ZHl6ajEifQ.k-7Aez1RUjOQEL1kEQDF1Q';
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        center: [-122.676483, 45.523064], // starting position [lng, lat]
+        zoom: 12 // starting zoom
+    });
+    (async function() {
+        const categoryEmoji = {
+            'Debris in Roadway': '🗑️',
+            'Street Lighting': '💡',
+            'Potholes': '🕳️',
+            'Plugged Storm Drain/Inlet': '🌊',
+            'Illegal Parking': '🚗',
+            'Sewer Cleaning': '💩',
+        }
+        // See https://docs.webhookdb.com/guides/render-map/ to get your own URL for your own feed or database
+        const webhookdbSavedQueryUrl = 'https://api.webhookdb.com/v1/saved_queries/svq_23en3z2idq56ktlc2ivb4x6ri/run'
+        const resp = await fetch(webhookdbSavedQueryUrl);
+        const body = await resp.json();
+        body.rows.forEach((row) => {
+            // Will give an object with keys like: title, published, geo_lat, geo_lng, status, address, comment
+            // If the query changes the selected column names, we need to change this.
+            const rowObj = {};
+            body.headers.forEach((h, i) => {
+                rowObj[h] = row[i];
+            });
+            const popupHtml = `<h2>${rowObj.title}</h2><p>${rowObj.comment || ''}</p><p>At: ${rowObj.published}<br />Status: ${rowObj.status}<br />ID: ${rowObj.entry_id}</p>`
+            const popup = new mapboxgl.Popup({ offset: 12 }).setHTML(popupHtml)
+            const el = document.createElement('div');
+            el.classList.add('marker');
+            el.innerHTML = `${categoryEmoji[rowObj.category] || '❓'}`;
+            new mapboxgl.Marker(el)
+                .setLngLat([rowObj.geo_lng, rowObj.geo_lat])
+                .setPopup(popup)
+                .addTo(map);
+        })
+    })()
+</script>
+</body>
+</html>
+```
+
+{: .notice}
+Find the UI code for this tutorial at <https://github.com/webhookdb/pdxreporter-map>.
