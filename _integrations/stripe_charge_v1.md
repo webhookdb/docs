@@ -1,14 +1,19 @@
 ---
 title: Stripe Charge
 layout: home
-nav_order: 660
+nav_order: 670
 ---
 
 # Stripe Charge (`stripe_charge_v1`)
 
 Replicate Stripe Charges into your database.
 
-Docs for this API: [https://stripe.com/docs/api/charges](https://stripe.com/docs/api/charges)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create stripe_charge_v1
+```
+
+Source documentation for this API: [https://stripe.com/docs/api/charges](https://stripe.com/docs/api/charges)
 
 ## Features
 

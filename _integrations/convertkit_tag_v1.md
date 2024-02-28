@@ -8,7 +8,12 @@ nav_order: 120
 
 Replicate ConvertKit Tags into your database.
 
-Docs for this API: [https://developers.convertkit.com/#list-tags](https://developers.convertkit.com/#list-tags)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create convertkit_tag_v1
+```
+
+Source documentation for this API: [https://developers.convertkit.com/#list-tags](https://developers.convertkit.com/#list-tags)
 
 ## Features
 

@@ -1,14 +1,19 @@
 ---
 title: Stripe Refund
 layout: home
-nav_order: 750
+nav_order: 760
 ---
 
 # Stripe Refund (`stripe_refund_v1`)
 
 Replicate Stripe Refunds into your database.
 
-Docs for this API: [https://stripe.com/docs/api/refunds](https://stripe.com/docs/api/refunds)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create stripe_refund_v1
+```
+
+Source documentation for this API: [https://stripe.com/docs/api/refunds](https://stripe.com/docs/api/refunds)
 
 ## Features
 

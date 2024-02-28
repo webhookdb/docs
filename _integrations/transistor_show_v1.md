@@ -1,14 +1,19 @@
 ---
 title: Transistor Show
 layout: home
-nav_order: 800
+nav_order: 810
 ---
 
 # Transistor Show (`transistor_show_v1`)
 
 Replicate Transistor Shows into your database.
 
-Docs for this API: [https://developers.transistor.fm/#Show](https://developers.transistor.fm/#Show)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create transistor_show_v1
+```
+
+Source documentation for this API: [https://developers.transistor.fm/#Show](https://developers.transistor.fm/#Show)
 
 ## Features
 

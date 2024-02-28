@@ -1,14 +1,19 @@
 ---
 title: GitHub Issue
 layout: home
-nav_order: 210
+nav_order: 220
 ---
 
 # GitHub Issue (`github_issue_v1`)
 
 Replicate GitHub Issues into your database.
 
-Docs for this API: [https://docs.github.com/en/rest/issues/issues?apiVersion=2022-11-28](https://docs.github.com/en/rest/issues/issues?apiVersion=2022-11-28)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create github_issue_v1
+```
+
+Source documentation for this API: [https://docs.github.com/en/rest/issues/issues?apiVersion=2022-11-28](https://docs.github.com/en/rest/issues/issues?apiVersion=2022-11-28)
 
 ## Features
 

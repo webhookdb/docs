@@ -1,14 +1,22 @@
 ---
 title: NextPax Property Manager Policy
 layout: home
-nav_order: 480
+nav_order: 490
 ---
 
 # NextPax Property Manager Policy (`nextpax_property_manager_policy_v1`)
 
+{% include enterprise_integration_list.md %}
+
+
 Replicate NextPax Property Manager Policys into your database.
 
-Docs for this API: [https://developer.nextpax.app/portal/da/swagger#/](https://developer.nextpax.app/portal/da/swagger#/)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create nextpax_property_manager_policy_v1
+```
+
+Source documentation for this API: [https://developer.nextpax.app/portal/da/swagger#/](https://developer.nextpax.app/portal/da/swagger#/)
 
 ## Features
 

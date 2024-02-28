@@ -8,7 +8,12 @@ nav_order: 170
 
 Replicate Front Conversations into your database.
 
-Docs for this API: [https://dev.frontapp.com/reference/conversations](https://dev.frontapp.com/reference/conversations)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create front_conversation_v1
+```
+
+Source documentation for this API: [https://dev.frontapp.com/reference/conversations](https://dev.frontapp.com/reference/conversations)
 
 ## Features
 

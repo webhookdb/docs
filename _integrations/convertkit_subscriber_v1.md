@@ -8,7 +8,12 @@ nav_order: 110
 
 Replicate ConvertKit subscribers into a database. This is one of the only ways you can keep track of historical subscriber information with ConvertKit.
 
-Docs for this API: [https://developers.convertkit.com/#list-subscribers](https://developers.convertkit.com/#list-subscribers)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create convertkit_subscriber_v1
+```
+
+Source documentation for this API: [https://developers.convertkit.com/#list-subscribers](https://developers.convertkit.com/#list-subscribers)
 
 ## Features
 

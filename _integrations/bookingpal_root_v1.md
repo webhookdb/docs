@@ -6,7 +6,15 @@ nav_order: 90
 
 # BookingPal Root (`bookingpal_root_v1`)
 
+{% include enterprise_integration_list.md %}
+
+
 This replicator is used to store the authentication secret with BookingPal.
+
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create bookingpal_root_v1
+```
 
 ## Features
 

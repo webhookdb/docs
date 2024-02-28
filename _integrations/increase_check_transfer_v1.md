@@ -1,14 +1,19 @@
 ---
 title: Increase Check Transfer
 layout: home
-nav_order: 350
+nav_order: 360
 ---
 
 # Increase Check Transfer (`increase_check_transfer_v1`)
 
 Replicate Increase Check Transfers into your database.
 
-Docs for this API: [https://increase.com/documentation/api](https://increase.com/documentation/api)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create increase_check_transfer_v1
+```
+
+Source documentation for this API: [https://increase.com/documentation/api](https://increase.com/documentation/api)
 
 ## Features
 

@@ -8,7 +8,12 @@ nav_order: 100
 
 Replicate ConvertKit Broadcasts into your database.
 
-Docs for this API: [https://developers.convertkit.com/#list-broadcasts](https://developers.convertkit.com/#list-broadcasts)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create convertkit_broadcast_v1
+```
+
+Source documentation for this API: [https://developers.convertkit.com/#list-broadcasts](https://developers.convertkit.com/#list-broadcasts)
 
 ## Features
 

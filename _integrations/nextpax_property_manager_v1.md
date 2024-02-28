@@ -1,14 +1,22 @@
 ---
 title: NextPax Property Manager
 layout: home
-nav_order: 490
+nav_order: 500
 ---
 
 # NextPax Property Manager (`nextpax_property_manager_v1`)
 
+{% include enterprise_integration_list.md %}
+
+
 Replicate NextPax Property Managers into your database.
 
-Docs for this API: [https://developer.nextpax.app/portal/da/swagger#/](https://developer.nextpax.app/portal/da/swagger#/)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create nextpax_property_manager_v1
+```
+
+Source documentation for this API: [https://developer.nextpax.app/portal/da/swagger#/](https://developer.nextpax.app/portal/da/swagger#/)
 
 ## Features
 

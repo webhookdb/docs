@@ -1,14 +1,22 @@
 ---
 title: Plaid Item
 layout: home
-nav_order: 530
+nav_order: 540
 ---
 
 # Plaid Item (`plaid_item_v1`)
 
+{% include enterprise_integration_list.md %}
+
+
 Replicate Plaid Items into your database.
 
-Docs for this API: [https://plaid.com/docs/api/items/](https://plaid.com/docs/api/items/)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create plaid_item_v1
+```
+
+Source documentation for this API: [https://plaid.com/docs/api/items/](https://plaid.com/docs/api/items/)
 
 ## Features
 

@@ -1,14 +1,19 @@
 ---
 title: Increase Transaction
 layout: home
-nav_order: 370
+nav_order: 380
 ---
 
 # Increase Transaction (`increase_transaction_v1`)
 
 Replicate Increase Transactions into your database.
 
-Docs for this API: [https://increase.com/documentation/api](https://increase.com/documentation/api)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create increase_transaction_v1
+```
+
+Source documentation for this API: [https://increase.com/documentation/api](https://increase.com/documentation/api)
 
 ## Features
 

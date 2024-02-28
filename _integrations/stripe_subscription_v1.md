@@ -1,14 +1,19 @@
 ---
 title: Stripe Subscription
 layout: home
-nav_order: 770
+nav_order: 780
 ---
 
 # Stripe Subscription (`stripe_subscription_v1`)
 
 Replicate Stripe Subscriptions into your database.
 
-Docs for this API: [https://stripe.com/docs/api/subscriptions](https://stripe.com/docs/api/subscriptions)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create stripe_subscription_v1
+```
+
+Source documentation for this API: [https://stripe.com/docs/api/subscriptions](https://stripe.com/docs/api/subscriptions)
 
 ## Features
 

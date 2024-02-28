@@ -1,14 +1,19 @@
 ---
 title: Stripe Customer
 layout: home
-nav_order: 680
+nav_order: 690
 ---
 
 # Stripe Customer (`stripe_customer_v1`)
 
 Replicate Stripe Customers into your database.
 
-Docs for this API: [https://stripe.com/docs/api/customers](https://stripe.com/docs/api/customers)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create stripe_customer_v1
+```
+
+Source documentation for this API: [https://stripe.com/docs/api/customers](https://stripe.com/docs/api/customers)
 
 ## Features
 

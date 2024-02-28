@@ -1,14 +1,19 @@
 ---
 title: iCalendar Calendar
 layout: home
-nav_order: 290
+nav_order: 300
 ---
 
 # iCalendar Calendar (`icalendar_calendar_v1`)
 
 Fetch and convert an icalendar format file into a schematized and queryable database table.
 
-Docs for this API: [https://icalendar.org/](https://icalendar.org/)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create icalendar_calendar_v1
+```
+
+Source documentation for this API: [https://icalendar.org/](https://icalendar.org/)
 
 ## Features
 

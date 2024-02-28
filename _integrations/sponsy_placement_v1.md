@@ -1,14 +1,19 @@
 ---
 title: Sponsy Placement
 layout: home
-nav_order: 620
+nav_order: 630
 ---
 
 # Sponsy Placement (`sponsy_placement_v1`)
 
 Replicate Sponsy Placements into your database.
 
-Docs for this API: [https://api.getsponsy.com/docs](https://api.getsponsy.com/docs)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create sponsy_placement_v1
+```
+
+Source documentation for this API: [https://api.getsponsy.com/docs](https://api.getsponsy.com/docs)
 
 ## Features
 

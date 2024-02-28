@@ -1,12 +1,20 @@
 ---
 title: Outlook Calendar
 layout: home
-nav_order: 440
+nav_order: 450
 ---
 
 # Outlook Calendar (`microsoft_calendar_v1`)
 
+{% include enterprise_integration_list.md %}
+
+
 Replicate Outlook Calendars into your database.
+
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create microsoft_calendar_v1
+```
 
 ## Features
 

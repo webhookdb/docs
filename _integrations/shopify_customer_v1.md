@@ -1,14 +1,19 @@
 ---
 title: Shopify Customer
 layout: home
-nav_order: 580
+nav_order: 590
 ---
 
 # Shopify Customer (`shopify_customer_v1`)
 
 Replicate Shopify Customers into your database.
 
-Docs for this API: [https://shopify.dev/docs/api/admin-rest/2023-10/resources/customer](https://shopify.dev/docs/api/admin-rest/2023-10/resources/customer)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create shopify_customer_v1
+```
+
+Source documentation for this API: [https://shopify.dev/docs/api/admin-rest/2023-10/resources/customer](https://shopify.dev/docs/api/admin-rest/2023-10/resources/customer)
 
 ## Features
 

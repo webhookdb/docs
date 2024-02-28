@@ -1,14 +1,19 @@
 ---
 title: Sponsy Status
 layout: home
-nav_order: 650
+nav_order: 660
 ---
 
 # Sponsy Status (`sponsy_status_v1`)
 
 Replicate Sponsy Statuses into your database.
 
-Docs for this API: [https://api.getsponsy.com/docs](https://api.getsponsy.com/docs)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create sponsy_status_v1
+```
+
+Source documentation for this API: [https://api.getsponsy.com/docs](https://api.getsponsy.com/docs)
 
 ## Features
 

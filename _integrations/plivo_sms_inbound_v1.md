@@ -1,14 +1,19 @@
 ---
 title: Plivo Inbound SMS Message
 layout: home
-nav_order: 550
+nav_order: 560
 ---
 
 # Plivo Inbound SMS Message (`plivo_sms_inbound_v1`)
 
 Replicate Plivo Inbound SMS Messages into your database.
 
-Docs for this API: [https://www.plivo.com/docs/sms/api/message#the-message-object](https://www.plivo.com/docs/sms/api/message#the-message-object)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create plivo_sms_inbound_v1
+```
+
+Source documentation for this API: [https://www.plivo.com/docs/sms/api/message#the-message-object](https://www.plivo.com/docs/sms/api/message#the-message-object)
 
 ## Features
 

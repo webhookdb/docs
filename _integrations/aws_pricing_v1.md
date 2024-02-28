@@ -8,7 +8,12 @@ nav_order: 20
 
 Fetch, parse, and process AWS price list information from the API into a relational, fully searchable table.
 
-Docs for this API: [https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-list-query-api-find-services-products.html](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-list-query-api-find-services-products.html)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create aws_pricing_v1
+```
+
+Source documentation for this API: [https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-list-query-api-find-services-products.html](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-list-query-api-find-services-products.html)
 
 ## Features
 

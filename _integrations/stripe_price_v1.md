@@ -1,14 +1,19 @@
 ---
 title: Stripe Price
 layout: home
-nav_order: 730
+nav_order: 740
 ---
 
 # Stripe Price (`stripe_price_v1`)
 
 Replicate Stripe Prices into your database.
 
-Docs for this API: [https://stripe.com/docs/api/prices](https://stripe.com/docs/api/prices)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create stripe_price_v1
+```
+
+Source documentation for this API: [https://stripe.com/docs/api/prices](https://stripe.com/docs/api/prices)
 
 ## Features
 

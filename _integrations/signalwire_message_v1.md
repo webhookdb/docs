@@ -1,18 +1,30 @@
 ---
 title: SignalWire Message
 layout: home
-nav_order: 600
+nav_order: 610
 ---
 
 # SignalWire Message (`signalwire_message_v1`)
 
 Replicate SignalWire Messages into your database.
 
-Docs for this API: [https://developer.signalwire.com/compatibility-api/rest/list-all-messages](https://developer.signalwire.com/compatibility-api/rest/list-all-messages)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create signalwire_message_v1
+```
+
+Source documentation for this API: [https://developer.signalwire.com/compatibility-api/rest/list-all-messages](https://developer.signalwire.com/compatibility-api/rest/list-all-messages)
 
 ## Features
 
 <dl>
+<dt>Dependents</dt>
+<dd>This replicator is required for the creation of the following dependents:
+<ul>
+<li><a href="{% link _integrations/front_signalwire_message_channel_app_v1.md %}">front_signalwire_message_channel_app_v1</a></li>
+</ul>
+</dd>
+
 <dt>Supports Webhooks</dt>
 <dd>❌</dd>
 <dt>Supports Backfilling</dt>

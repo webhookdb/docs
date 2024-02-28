@@ -1,14 +1,19 @@
 ---
 title: GitHub Pull Request
 layout: home
-nav_order: 220
+nav_order: 230
 ---
 
 # GitHub Pull Request (`github_pull_v1`)
 
 Replicate GitHub Pull Requests into your database.
 
-Docs for this API: [https://docs.github.com/en/rest/pulls/pulls?apiVersion=2022-11-28](https://docs.github.com/en/rest/pulls/pulls?apiVersion=2022-11-28)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create github_pull_v1
+```
+
+Source documentation for this API: [https://docs.github.com/en/rest/pulls/pulls?apiVersion=2022-11-28](https://docs.github.com/en/rest/pulls/pulls?apiVersion=2022-11-28)
 
 ## Features
 

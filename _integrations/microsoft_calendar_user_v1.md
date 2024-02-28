@@ -1,12 +1,20 @@
 ---
 title: Outlook Calendar User
 layout: home
-nav_order: 430
+nav_order: 440
 ---
 
 # Outlook Calendar User (`microsoft_calendar_user_v1`)
 
+{% include enterprise_integration_list.md %}
+
+
 Replicate Outlook Calendar Users into your database.
+
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create microsoft_calendar_user_v1
+```
 
 ## Features
 

@@ -1,14 +1,19 @@
 ---
 title: Stripe Coupon
 layout: home
-nav_order: 670
+nav_order: 680
 ---
 
 # Stripe Coupon (`stripe_coupon_v1`)
 
 Replicate Stripe Coupons into your database.
 
-Docs for this API: [https://stripe.com/docs/api/coupons](https://stripe.com/docs/api/coupons)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create stripe_coupon_v1
+```
+
+Source documentation for this API: [https://stripe.com/docs/api/coupons](https://stripe.com/docs/api/coupons)
 
 ## Features
 

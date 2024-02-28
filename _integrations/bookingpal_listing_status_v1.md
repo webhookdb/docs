@@ -6,9 +6,17 @@ nav_order: 70
 
 # BookingPal Listing Status (`bookingpal_listing_status_v1`)
 
+{% include enterprise_integration_list.md %}
+
+
 Replicate BookingPal Listing Statuses into your database.
 
-Docs for this API: [https://www.apimatic.io/apidocs/channelapi/v/2_24](https://www.apimatic.io/apidocs/channelapi/v/2_24)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create bookingpal_listing_status_v1
+```
+
+Source documentation for this API: [https://www.apimatic.io/apidocs/channelapi/v/2_24](https://www.apimatic.io/apidocs/channelapi/v/2_24)
 
 ## Features
 

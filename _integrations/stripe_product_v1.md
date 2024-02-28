@@ -1,14 +1,19 @@
 ---
 title: Stripe Product
 layout: home
-nav_order: 740
+nav_order: 750
 ---
 
 # Stripe Product (`stripe_product_v1`)
 
 Replicate Stripe Products into your database.
 
-Docs for this API: [https://stripe.com/docs/api/products](https://stripe.com/docs/api/products)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create stripe_product_v1
+```
+
+Source documentation for this API: [https://stripe.com/docs/api/products](https://stripe.com/docs/api/products)
 
 ## Features
 

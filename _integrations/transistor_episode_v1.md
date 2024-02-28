@@ -1,14 +1,19 @@
 ---
 title: Transistor Episode
 layout: home
-nav_order: 790
+nav_order: 800
 ---
 
 # Transistor Episode (`transistor_episode_v1`)
 
 Replicate Transistor Episodes into your database.
 
-Docs for this API: [https://developers.transistor.fm/#Episode](https://developers.transistor.fm/#Episode)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create transistor_episode_v1
+```
+
+Source documentation for this API: [https://developers.transistor.fm/#Episode](https://developers.transistor.fm/#Episode)
 
 ## Features
 
@@ -49,6 +54,7 @@ other data types maybe used.
 | `title` | `text` |  |
 | `type` | `text` |  |
 | `updated_at` | `timestamptz` | ✅ |
+| `transcript_text` | `text` |  |
 | `api_format` | `integer` |  |
 | `logical_summary` | `text` |  |
 | `logical_description` | `text` |  |
@@ -79,6 +85,7 @@ CREATE TABLE public.transistor_episode_v1_fixture (
   title text,
   type text,
   updated_at timestamptz,
+  transcript_text text,
   api_format integer,
   logical_summary text,
   logical_description text,

@@ -1,14 +1,19 @@
 ---
 title: Postmark Inbound Message
 layout: home
-nav_order: 560
+nav_order: 570
 ---
 
 # Postmark Inbound Message (`postmark_inbound_message_v1`)
 
 Replicate Postmark Inbound Messages into your database.
 
-Docs for this API: [https://postmarkapp.com/developer/user-guide/inbound/parse-an-email](https://postmarkapp.com/developer/user-guide/inbound/parse-an-email)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create postmark_inbound_message_v1
+```
+
+Source documentation for this API: [https://postmarkapp.com/developer/user-guide/inbound/parse-an-email](https://postmarkapp.com/developer/user-guide/inbound/parse-an-email)
 
 ## Features
 

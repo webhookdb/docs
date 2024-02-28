@@ -1,14 +1,19 @@
 ---
 title: Stripe Invoice Item
 layout: home
-nav_order: 700
+nav_order: 710
 ---
 
 # Stripe Invoice Item (`stripe_invoice_item_v1`)
 
 Replicate Stripe Invoice Items into your database.
 
-Docs for this API: [https://stripe.com/docs/api/invoiceitems](https://stripe.com/docs/api/invoiceitems)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create stripe_invoice_item_v1
+```
+
+Source documentation for this API: [https://stripe.com/docs/api/invoiceitems](https://stripe.com/docs/api/invoiceitems)
 
 ## Features
 

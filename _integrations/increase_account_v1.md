@@ -1,14 +1,19 @@
 ---
 title: Increase Account
 layout: home
-nav_order: 330
+nav_order: 340
 ---
 
 # Increase Account (`increase_account_v1`)
 
 Replicate Increase Accounts into your database.
 
-Docs for this API: [https://increase.com/documentation/api](https://increase.com/documentation/api)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create increase_account_v1
+```
+
+Source documentation for this API: [https://increase.com/documentation/api](https://increase.com/documentation/api)
 
 ## Features
 

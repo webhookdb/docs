@@ -1,14 +1,19 @@
 ---
 title: Stripe Payout
 layout: home
-nav_order: 720
+nav_order: 730
 ---
 
 # Stripe Payout (`stripe_payout_v1`)
 
 Replicate Stripe Payouts into your database.
 
-Docs for this API: [https://stripe.com/docs/api/payouts](https://stripe.com/docs/api/payouts)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create stripe_payout_v1
+```
+
+Source documentation for this API: [https://stripe.com/docs/api/payouts](https://stripe.com/docs/api/payouts)
 
 ## Features
 

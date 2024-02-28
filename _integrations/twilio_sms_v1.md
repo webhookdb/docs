@@ -1,14 +1,19 @@
 ---
 title: Twilio SMS Message
 layout: home
-nav_order: 810
+nav_order: 820
 ---
 
 # Twilio SMS Message (`twilio_sms_v1`)
 
 Replicate Twilio SMS Messages into your database.
 
-Docs for this API: [https://www.twilio.com/docs/usage/api#send-an-sms-with-twilios-api](https://www.twilio.com/docs/usage/api#send-an-sms-with-twilios-api)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create twilio_sms_v1
+```
+
+Source documentation for this API: [https://www.twilio.com/docs/usage/api#send-an-sms-with-twilios-api](https://www.twilio.com/docs/usage/api#send-an-sms-with-twilios-api)
 
 ## Features
 

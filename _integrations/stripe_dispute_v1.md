@@ -1,14 +1,19 @@
 ---
 title: Stripe Dispute
 layout: home
-nav_order: 690
+nav_order: 700
 ---
 
 # Stripe Dispute (`stripe_dispute_v1`)
 
 Replicate Stripe Disputes into your database.
 
-Docs for this API: [https://stripe.com/docs/api/disputes](https://stripe.com/docs/api/disputes)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create stripe_dispute_v1
+```
+
+Source documentation for this API: [https://stripe.com/docs/api/disputes](https://stripe.com/docs/api/disputes)
 
 ## Features
 

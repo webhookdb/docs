@@ -1,14 +1,19 @@
 ---
 title: Stripe Invoice
 layout: home
-nav_order: 710
+nav_order: 720
 ---
 
 # Stripe Invoice (`stripe_invoice_v1`)
 
 Replicate Stripe Invoices into your database.
 
-Docs for this API: [https://stripe.com/docs/api/invoices](https://stripe.com/docs/api/invoices)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create stripe_invoice_v1
+```
+
+Source documentation for this API: [https://stripe.com/docs/api/invoices](https://stripe.com/docs/api/invoices)
 
 ## Features
 

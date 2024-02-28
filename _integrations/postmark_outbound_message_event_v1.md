@@ -1,14 +1,19 @@
 ---
 title: Postmark Outbound Message Event
 layout: home
-nav_order: 570
+nav_order: 580
 ---
 
 # Postmark Outbound Message Event (`postmark_outbound_message_event_v1`)
 
 Replicate Postmark Outbound Message Events into your database.
 
-Docs for this API: [https://postmarkapp.com/developer/webhooks/webhooks-overview](https://postmarkapp.com/developer/webhooks/webhooks-overview)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create postmark_outbound_message_event_v1
+```
+
+Source documentation for this API: [https://postmarkapp.com/developer/webhooks/webhooks-overview](https://postmarkapp.com/developer/webhooks/webhooks-overview)
 
 ## Features
 

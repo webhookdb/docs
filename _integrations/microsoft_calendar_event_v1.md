@@ -1,12 +1,20 @@
 ---
 title: Outlook Calendar Event
 layout: home
-nav_order: 420
+nav_order: 430
 ---
 
 # Outlook Calendar Event (`microsoft_calendar_event_v1`)
 
+{% include enterprise_integration_list.md %}
+
+
 Replicate Outlook Calendar Events into your database.
+
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create microsoft_calendar_event_v1
+```
 
 ## Features
 

@@ -1,14 +1,19 @@
 ---
 title: Shopify Order
 layout: home
-nav_order: 590
+nav_order: 600
 ---
 
 # Shopify Order (`shopify_order_v1`)
 
 Replicate Shopify Orders into your database.
 
-Docs for this API: [https://shopify.dev/docs/api/admin-rest/2023-10/resources/order](https://shopify.dev/docs/api/admin-rest/2023-10/resources/order)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create shopify_order_v1
+```
+
+Source documentation for this API: [https://shopify.dev/docs/api/admin-rest/2023-10/resources/order](https://shopify.dev/docs/api/admin-rest/2023-10/resources/order)
 
 ## Features
 

@@ -1,14 +1,19 @@
 ---
 title: Increase Wire Transfer
 layout: home
-nav_order: 380
+nav_order: 390
 ---
 
 # Increase Wire Transfer (`increase_wire_transfer_v1`)
 
 Replicate Increase Wire Transfers into your database.
 
-Docs for this API: [https://increase.com/documentation/api](https://increase.com/documentation/api)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create increase_wire_transfer_v1
+```
+
+Source documentation for this API: [https://increase.com/documentation/api](https://increase.com/documentation/api)
 
 ## Features
 

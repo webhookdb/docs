@@ -1,14 +1,19 @@
 ---
 title: Intercom Conversation
 layout: home
-nav_order: 400
+nav_order: 410
 ---
 
 # Intercom Conversation (`intercom_conversation_v1`)
 
 Replicate Intercom Conversations into your database.
 
-Docs for this API: [https://developers.intercom.com/docs/references/rest-api/api.intercom.io/Conversations/](https://developers.intercom.com/docs/references/rest-api/api.intercom.io/Conversations/)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create intercom_conversation_v1
+```
+
+Source documentation for this API: [https://developers.intercom.com/docs/references/rest-api/api.intercom.io/Conversations/](https://developers.intercom.com/docs/references/rest-api/api.intercom.io/Conversations/)
 
 ## Features
 

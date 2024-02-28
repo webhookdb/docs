@@ -1,14 +1,19 @@
 ---
 title: GitHub Issue Comment
 layout: home
-nav_order: 200
+nav_order: 210
 ---
 
 # GitHub Issue Comment (`github_issue_comment_v1`)
 
 Replicate GitHub Issue Comments into your database.
 
-Docs for this API: [https://docs.github.com/en/rest/issues/comments?apiVersion=2022-11-28](https://docs.github.com/en/rest/issues/comments?apiVersion=2022-11-28)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create github_issue_comment_v1
+```
+
+Source documentation for this API: [https://docs.github.com/en/rest/issues/comments?apiVersion=2022-11-28](https://docs.github.com/en/rest/issues/comments?apiVersion=2022-11-28)
 
 ## Features
 
@@ -64,4 +69,4 @@ CREATE INDEX IF NOT EXISTS svi_fixture_user_id_idx ON public.github_issue_commen
 CREATE INDEX IF NOT EXISTS svi_fixture_node_id_idx ON public.github_issue_comment_v1_fixture (node_id);
 ```
 
-{% include prevnext.html prev='_integrations/front_message_v1.md' prevLabel='front_message_v1' next='_integrations/github_issue_v1.md' nextLabel='github_issue_v1' %}
+{% include prevnext.html prev='_integrations/front_signalwire_message_channel_app_v1.md' prevLabel='front_signalwire_message_channel_app_v1' next='_integrations/github_issue_v1.md' nextLabel='github_issue_v1' %}

@@ -1,14 +1,22 @@
 ---
 title: Google Calendar Event
 layout: home
-nav_order: 250
+nav_order: 260
 ---
 
 # Google Calendar Event (`google_calendar_event_v1`)
 
+{% include enterprise_integration_list.md %}
+
+
 Replicate Google Calendar events into your database. This integration expands recurring events. See google_calendar_source_event_v1 for non-expanded events.
 
-Docs for this API: [https://developers.google.com/calendar/api/v3/reference/events](https://developers.google.com/calendar/api/v3/reference/events)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create google_calendar_event_v1
+```
+
+Source documentation for this API: [https://developers.google.com/calendar/api/v3/reference/events](https://developers.google.com/calendar/api/v3/reference/events)
 
 ## Features
 

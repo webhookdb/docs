@@ -1,14 +1,19 @@
 ---
 title: Sponsy Slot
 layout: home
-nav_order: 640
+nav_order: 650
 ---
 
 # Sponsy Slot (`sponsy_slot_v1`)
 
 Replicate Sponsy Slots into your database.
 
-Docs for this API: [https://api.getsponsy.com/docs](https://api.getsponsy.com/docs)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create sponsy_slot_v1
+```
+
+Source documentation for this API: [https://api.getsponsy.com/docs](https://api.getsponsy.com/docs)
 
 ## Features
 

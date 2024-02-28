@@ -17,6 +17,7 @@
 - [Front Conversation]({% link _integrations/front_conversation_v1.md %})
 - [Front Auth]({% link _integrations/front_marketplace_root_v1.md %})
 - [Front Message]({% link _integrations/front_message_v1.md %})
+- [Front/SignalWire Message]({% link _integrations/front_signalwire_message_channel_app_v1.md %})
 - [GitHub Issue Comment]({% link _integrations/github_issue_comment_v1.md %})
 - [GitHub Issue]({% link _integrations/github_issue_v1.md %})
 - [GitHub Pull Request]({% link _integrations/github_pull_v1.md %})

@@ -1,14 +1,19 @@
 ---
 title: Intercom Contact
 layout: home
-nav_order: 390
+nav_order: 400
 ---
 
 # Intercom Contact (`intercom_contact_v1`)
 
 Replicate Intercom Contacts into your database.
 
-Docs for this API: [https://developers.intercom.com/docs/references/rest-api/api.intercom.io/Contacts/](https://developers.intercom.com/docs/references/rest-api/api.intercom.io/Contacts/)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create intercom_contact_v1
+```
+
+Source documentation for this API: [https://developers.intercom.com/docs/references/rest-api/api.intercom.io/Contacts/](https://developers.intercom.com/docs/references/rest-api/api.intercom.io/Contacts/)
 
 ## Features
 

@@ -1,14 +1,22 @@
 ---
 title: Plaid Transaction
 layout: home
-nav_order: 540
+nav_order: 550
 ---
 
 # Plaid Transaction (`plaid_transaction_v1`)
 
+{% include enterprise_integration_list.md %}
+
+
 Replicate Plaid Transactions into your database.
 
-Docs for this API: [https://plaid.com/docs/api/products/transactions/](https://plaid.com/docs/api/products/transactions/)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create plaid_transaction_v1
+```
+
+Source documentation for this API: [https://plaid.com/docs/api/products/transactions/](https://plaid.com/docs/api/products/transactions/)
 
 ## Features
 

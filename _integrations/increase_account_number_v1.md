@@ -1,14 +1,19 @@
 ---
 title: Increase Account Number
 layout: home
-nav_order: 310
+nav_order: 320
 ---
 
 # Increase Account Number (`increase_account_number_v1`)
 
 Replicate Increase Account Numbers into your database.
 
-Docs for this API: [https://icalendar.org/](https://icalendar.org/)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create increase_account_number_v1
+```
+
+Source documentation for this API: [https://icalendar.org/](https://icalendar.org/)
 
 ## Features
 

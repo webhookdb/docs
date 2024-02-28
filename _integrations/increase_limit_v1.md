@@ -1,14 +1,19 @@
 ---
 title: Increase Limit
 layout: home
-nav_order: 360
+nav_order: 370
 ---
 
 # Increase Limit (`increase_limit_v1`)
 
 Replicate Increase Limits into your database.
 
-Docs for this API: [https://increase.com/documentation/api](https://increase.com/documentation/api)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create increase_limit_v1
+```
+
+Source documentation for this API: [https://increase.com/documentation/api](https://increase.com/documentation/api)
 
 ## Features
 

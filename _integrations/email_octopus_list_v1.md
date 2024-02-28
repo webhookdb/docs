@@ -8,7 +8,12 @@ nav_order: 160
 
 Replicate Email Octopus Lists into your database.
 
-Docs for this API: [https://emailoctopus.com/api-documentation](https://emailoctopus.com/api-documentation)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create email_octopus_list_v1
+```
+
+Source documentation for this API: [https://emailoctopus.com/api-documentation](https://emailoctopus.com/api-documentation)
 
 ## Features
 

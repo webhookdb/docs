@@ -1,14 +1,19 @@
 ---
 title: Sponsy Customer
 layout: home
-nav_order: 610
+nav_order: 620
 ---
 
 # Sponsy Customer (`sponsy_customer_v1`)
 
 Replicate Sponsy Customers into your database.
 
-Docs for this API: [https://api.getsponsy.com/docs](https://api.getsponsy.com/docs)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create sponsy_customer_v1
+```
+
+Source documentation for this API: [https://api.getsponsy.com/docs](https://api.getsponsy.com/docs)
 
 ## Features
 

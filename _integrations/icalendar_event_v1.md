@@ -1,14 +1,19 @@
 ---
 title: iCalendar Event
 layout: home
-nav_order: 300
+nav_order: 310
 ---
 
 # iCalendar Event (`icalendar_event_v1`)
 
 Individual events in an icalendar. See icalendar_calendar_v1.
 
-Docs for this API: [https://icalendar.org/](https://icalendar.org/)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create icalendar_event_v1
+```
+
+Source documentation for this API: [https://icalendar.org/](https://icalendar.org/)
 
 ## Features
 

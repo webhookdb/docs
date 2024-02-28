@@ -8,7 +8,12 @@ nav_order: 10
 
 Convert any Atom XML feed into a database table for querying and persistent archiving.
 
-Docs for this API: [https://en.wikipedia.org/wiki/Atom_(web_standard)](https://en.wikipedia.org/wiki/Atom_(web_standard))
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create atom_single_feed_v1
+```
+
+Source documentation for this API: [https://en.wikipedia.org/wiki/Atom_(web_standard)](https://en.wikipedia.org/wiki/Atom_(web_standard))
 
 ## Features
 

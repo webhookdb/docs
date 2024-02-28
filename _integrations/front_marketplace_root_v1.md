@@ -8,6 +8,11 @@ nav_order: 180
 
 You can replicate your data to WebhookDB Cloud using the Front Marketplace.
 
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create front_marketplace_root_v1
+```
+
 ## Features
 
 <dl>

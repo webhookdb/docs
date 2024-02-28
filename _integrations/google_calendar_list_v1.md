@@ -1,14 +1,22 @@
 ---
 title: Google Calendar List
 layout: home
-nav_order: 260
+nav_order: 270
 ---
 
 # Google Calendar List (`google_calendar_list_v1`)
 
+{% include enterprise_integration_list.md %}
+
+
 Replicate Google Calendar Lists into your database. Each linked user gets one Calendar List row.
 
-Docs for this API: [https://developers.google.com/calendar/api/v3/reference/calendarList](https://developers.google.com/calendar/api/v3/reference/calendarList)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create google_calendar_list_v1
+```
+
+Source documentation for this API: [https://developers.google.com/calendar/api/v3/reference/calendarList](https://developers.google.com/calendar/api/v3/reference/calendarList)
 
 ## Features
 

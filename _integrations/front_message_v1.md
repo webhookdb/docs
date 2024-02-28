@@ -8,7 +8,12 @@ nav_order: 190
 
 Replicate Front Messages into your database.
 
-Docs for this API: [https://dev.frontapp.com/reference/messages](https://dev.frontapp.com/reference/messages)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create front_message_v1
+```
+
+Source documentation for this API: [https://dev.frontapp.com/reference/messages](https://dev.frontapp.com/reference/messages)
 
 ## Features
 
@@ -58,4 +63,4 @@ CREATE TABLE public.front_message_v1_fixture (
 );
 ```
 
-{% include prevnext.html prev='_integrations/front_marketplace_root_v1.md' prevLabel='front_marketplace_root_v1' next='_integrations/github_issue_comment_v1.md' nextLabel='github_issue_comment_v1' %}
+{% include prevnext.html prev='_integrations/front_marketplace_root_v1.md' prevLabel='front_marketplace_root_v1' next='_integrations/front_signalwire_message_channel_app_v1.md' nextLabel='front_signalwire_message_channel_app_v1' %}

@@ -1,14 +1,19 @@
 ---
 title: Transistor Episode Stats
 layout: home
-nav_order: 780
+nav_order: 790
 ---
 
 # Transistor Episode Stats (`transistor_episode_stats_v1`)
 
 Replicate Transistor Episode Stats into your database.
 
-Docs for this API: [https://developers.transistor.fm/#EpisodeAnalytics](https://developers.transistor.fm/#EpisodeAnalytics)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create transistor_episode_stats_v1
+```
+
+Source documentation for this API: [https://developers.transistor.fm/#EpisodeAnalytics](https://developers.transistor.fm/#EpisodeAnalytics)
 
 ## Features
 

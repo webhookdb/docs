@@ -1,14 +1,19 @@
 ---
 title: Increase ACH Transfer
 layout: home
-nav_order: 340
+nav_order: 350
 ---
 
 # Increase ACH Transfer (`increase_ach_transfer_v1`)
 
 Replicate Increase ACH Transfers into your database.
 
-Docs for this API: [https://increase.com/documentation/api](https://increase.com/documentation/api)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create increase_ach_transfer_v1
+```
+
+Source documentation for this API: [https://increase.com/documentation/api](https://increase.com/documentation/api)
 
 ## Features
 

@@ -1,12 +1,17 @@
 ---
 title: Intercom Auth
 layout: home
-nav_order: 410
+nav_order: 420
 ---
 
 # Intercom Auth (`intercom_marketplace_root_v1`)
 
 You can replicate your Intercom data to WebhookDB Cloud in one click using  the [Intercom App Store](https://www.intercom.com/app-store).
+
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create intercom_marketplace_root_v1
+```
 
 ## Features
 

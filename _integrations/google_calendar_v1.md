@@ -1,14 +1,22 @@
 ---
 title: Google Calendar
 layout: home
-nav_order: 280
+nav_order: 290
 ---
 
 # Google Calendar (`google_calendar_v1`)
 
+{% include enterprise_integration_list.md %}
+
+
 Replicate Google Calendars into your database.
 
-Docs for this API: [https://developers.google.com/calendar/api/v3/reference/calendars](https://developers.google.com/calendar/api/v3/reference/calendars)
+To get set up, run this code from the [WebhookDB CLI](https://webhookdb.com/terminal):
+```
+webhookdb integrations create google_calendar_v1
+```
+
+Source documentation for this API: [https://developers.google.com/calendar/api/v3/reference/calendars](https://developers.google.com/calendar/api/v3/reference/calendars)
 
 ## Features
 
@@ -53,6 +61,7 @@ other data types maybe used.
 | `events_watch_channel_id` | `text` | ✅ |
 | `events_watch_resource_id` | `text` |  |
 | `events_watch_channel_expiration` | `timestamptz` | ✅ |
+| `events_page_size` | `integer` |  |
 | `data`* | `jsonb` |  |
 
 <span class="fs-3">* The `data` column contains the raw payload from the webhook or API.
@@ -78,6 +87,7 @@ CREATE TABLE public.google_calendar_v1_fixture (
   events_watch_channel_id text,
   events_watch_resource_id text,
   events_watch_channel_expiration timestamptz,
+  events_page_size integer,
   data jsonb NOT NULL
 );
 CREATE INDEX IF NOT EXISTS svi_fixture_compound_identity_idx ON public.google_calendar_v1_fixture (compound_identity);
