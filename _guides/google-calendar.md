@@ -142,6 +142,7 @@ requests.post(
   headers={"Whdb-Webhook-Secret": os.getenv("WEBHOOKDB_GOOGLE_CALENDAR_SECRET")},
   json={
     "type": "REFRESHED",
+    "external_owner_id": str(user.id),
     "refresh_token": credentials.refresh_token,
   }
 )
@@ -161,6 +162,7 @@ requests.post(
   os.getenv("WEBHOOKDB_GOOGLE_CALENDAR_ENDPOINT"),
   headers={"Whdb-Webhook-Secret": os.getenv("WEBHOOKDB_GOOGLE_CALENDAR_SECRET")},
   json={
+    "external_owner_id": str(user.id),
     "type": "UNLINKED"
   }
 )
@@ -177,6 +179,7 @@ requests.post(
   os.getenv("WEBHOOKDB_GOOGLE_CALENDAR_ENDPOINT"),
   headers={"Whdb-Webhook-Secret": os.getenv("WEBHOOKDB_GOOGLE_CALENDAR_SECRET")},
   json={
+    "external_owner_id": str(user.id),
     "type": "RESYNC"
   }
 )
