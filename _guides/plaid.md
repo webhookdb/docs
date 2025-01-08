@@ -263,6 +263,59 @@ In the future, if Plaid starts sending webhooks on updates like this
 (which we think is pretty important!) you won't have to do this
 from your backend.
 
+<a id="processor-tokens"></a>
+
+## Processor Tokens
+
+WebhookDB also supports using [Plaid Processor Tokens](https://plaid.com/docs/api/processors/) for syncing transactions.
+
+To ease integration, all the instructions for Link Tokens also apply to Processor Tokens.
+Wherever you send `"item_id"` to WebhookDB, use the processor token's `account_id`:
+
+```ruby
+whdb_plaid_webhook_url = ENV['WHDB_PLAID_WEBHOOK_URL']
+whdb_plaid_webhook_secret = ENV['WHDB_PLAID_WEBHOOK_SECRET']
+# See https://plaid.com/docs/api/processors/#processor-token-create-request-account-id
+account_id = "yzhf012345"
+# See https://plaid.com/docs/api/processors/#processor-token-create-response-processor-token
+processor_token = "processor-sandbox-abc123"
+MyApp::PlaidItem.each do |item|
+    body = {
+      webhook_type: "ITEM",
+      webhook_code: "CREATED",
+      item_id: account_id,
+      access_token: processor_token
+    }
+    resp = Net::HTTP.post(
+      URI(whdb_plaid_webhook_url),
+      body.to_json,
+      {'Content-Type' => 'application/json', 'Whdb-Webhook-Secret' => whdb_plaid_webhook_secret}
+    )
+    raise "Bad response: #{resp.inspect}" unless resp.code == '200'
+end
+```
+
+WebhookDB takes care of everything else for you, and you can treat these just like normal tokens.
+
+The things to know are:
+
+- WebhookDB determines if an 'Item' call is a Link Token-based call or a Processor-Token based call
+  by looking for the `"processor-"` prefix on the access token.
+  You don't have to worry about this- Plaid will always have the `"processor-"` prefix on its Processor Tokens.
+- When a new Plaid Item row is added, if the access token is a Processor Token (see previous point),
+  the `processor_account_id` column will be set to the same value as the row's `plaid_id`.
+  You can use this to determine that a row in the `plaid_item_v1` table is actually a row for a processor account. 
+  - So, for a Link Token-based row:
+    - The `processor_account_id` column is null.
+    - The `plaid_id` column stores the Item ID.
+  - For a Processor Token-based row:
+    - The `processor_account_id` column stores the Account ID.
+    - The `plaid_id` column is also the Account ID (ie, identical to `processor_account_id`).
+- Processor Token based rows (ie, any row with a non-null `processor_account_id`) will not have Item-specific columns
+  set, like their `status` or `error`.
+  - So for example, a `"WEBHOOK_CODE": "UPDATED"` call would noop on Processor Token rows,
+    whereas for Link Token rows, it would update the database row with the result of an API call to Plaid.
+
 <a id="getting-help"></a>
 
 ## Getting Help
