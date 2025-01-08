@@ -63,4 +63,4 @@ $ webhookdb notification delete 54ca14e3c55e
 Events will no longer be sent to https://example.com.
 ```
 
-{% include prevnext.html prev="docs/integrating/httpsync.md" next="docs/integrating/saved-queries.md" %}
+{% include prevnext.html prev="docs/integrating/httpsync.md" next="docs/integrating/error-handlers.md" %}

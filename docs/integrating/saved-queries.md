@@ -117,4 +117,4 @@ What is the new value? SELECT 1
 You have updated 'sql' on saved query 'svq_m7c4zgy4sfza0eqwic7wqavc'.
 ```
 
-{% include prevnext.html prev="docs/integrating/notifications.md" %}
+{% include prevnext.html prev="docs/integrating/error-handlers.md" %}
